@@ -7,23 +7,18 @@
     --color-black: #1A1A1A;
     --color-black-light: #ACACAC;
     
-    --h1-font: 700 40px Montserrat;
+    --h1-font: 700 40px ;
     --h1-font-color: var(--color-black);
 
-    --h2-font: 600 25px Montserrat;
+    --h2-font: 600 25px ;
     --h2-font-color: var(--color-black);
     --h2-font-color-green: var(--color-primary);
 
-    --p-font: 400 20px Montserrat;
+    --p-font: 400 20px ;
     --p-font-color: var(--color-black);
 
-    --p-small-font-size: 400 15px Montserrat;
+    --p-small-font-size: 400 15px ;
     --p-small-font-color: var(--color-black-light);
-}
-
-@font-face {
-    font-family: Montserrat;
-    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 }
 
 * {
@@ -150,6 +145,7 @@ body {
     border-bottom: solid .15rem var(--color-black);
     margin: 1.75rem 0;
     width: 100%;
+    background-color: transparent;
 }
 
 .auth-form input:focus {
@@ -219,4 +215,8 @@ body {
 .bottom-link_current > #Path_779 {
     border-top: 3px solid var(--color-primary);
     color: var(--color-primary);
+}
+
+.hide {
+    display: none;
 }
