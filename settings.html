@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Gave App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <a href="index.html">Tilbage</a>
+    <nav class="auth-nav">
+        <ul>
+            <li><a id="logout" href="./index.html">Log out</a></li>
+            <li><a  href="./dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
     <!-- Sign up -->
     <div id="modal-signup" class="modal">
         <div class="auth-container signup-container">
             <form id="signup-form" class="auth-form">
-                <h1 class="heading">Registrer</h1>
-                <input id="signup-email" type="email" placeholder="Email">
-                <input id="signup-password" type="password" placeholder="Password">
-                <button class="auth-signup-btn">Registrer</button>
             </form>
         </div>
     </div>
-    
+
+    <!-- Log in -->
+    <div class="auth-container login-container">
+        <form id="login-form" class="auth-form">
+        </form>
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>

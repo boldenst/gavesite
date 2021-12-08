@@ -2,7 +2,7 @@ auth.onAuthStateChanged(user => {
     if (user) {
         console.log('User logged in:', user)
     } else {
-        console.log('User logged out!')
+        console.log('User logged out!');
     }
 });
 
@@ -32,9 +32,10 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['login-password'].value;
 
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred.user);
+        // console.log(cred.user);
         loginForm.reset();
-    })
+        window.location.href = "./dashboard.html";
+    });
 });
 
 
@@ -42,6 +43,6 @@ loginForm.addEventListener('submit', (e) => {
 // Logout method
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     auth.signOut()
 });

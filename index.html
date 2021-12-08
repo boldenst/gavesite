@@ -17,10 +17,7 @@
 
     <nav class="auth-nav">
         <ul>
-            <li><a id="auth-login-unfold" href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a id="logout" href="#">Log out</a></li>
-            <li><a  href="./dashboard.html">Dashboard</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
         </ul>
     </nav>
 
@@ -28,10 +25,10 @@
     <div id="modal-signup" class="modal">
         <div class="auth-container signup-container">
             <form id="signup-form" class="auth-form">
-                <h3>Sign up</h3>
+                <h3>Opret bruger</h3>
                 <input id="signup-email" type="email" placeholder="Email">
                 <input id="signup-password" type="password" placeholder="Password">
-                <button class="auth-signup-btn">Sign up</button>
+                <button class="auth-signup-btn">Opret bruger</button>
             </form>
         </div>
     </div>
@@ -39,10 +36,10 @@
     <!-- Log in -->
     <div class="auth-container login-container">
         <form id="login-form" class="auth-form">
-            <h3>Login</h3>
+            <h3>Log ind</h3>
             <input id="login-email" type="email" placeholder="Email">
             <input id="login-password" type="password" placeholder="Password">
-            <button class="auth-login-btn">Sign up</button>
+            <button onclick="toDashboard" class="auth-login-btn">Log ind</button>
         </form>
     </div>
 

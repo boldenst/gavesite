@@ -95,6 +95,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--color-primary);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+
 }
 
 .auth-nav li:nth-child(1) a {
@@ -166,6 +168,8 @@ body {
     border: none;
     font: var(--p-font);
     color: var(--main-ui-bg);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+
 }
 
 .sign-up-ref {
@@ -219,4 +223,29 @@ body {
 
 .hide {
     display: none;
+}
+
+.settings-open {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+    background-image: url(/images/icons/settings-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#logout {
+    background-color: var(--color-red);
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
