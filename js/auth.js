@@ -38,8 +38,6 @@ loginForm.addEventListener('submit', (e) => {
     });
 });
 
-
-
 // Logout method
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
