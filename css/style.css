@@ -1,3 +1,27 @@
+:root {
+    --color-primary: #42CB5D;
+    --color-secondary: #2C7F3C;
+    --color-red: #E94141;
+    --nav-background: #FFFFFF;
+    --main-ui-bg: #F7F7F7;
+    --color-black: #1A1A1A;
+    --color-black-light: #ACACAC;
+    
+    --h1-font: 700 40px ;
+    --h1-font-color: var(--color-black);
+
+    --h2-font: 600 25px ;
+    --h2-font-color: var(--color-black);
+    --h2-font-color-green: var(--color-primary);
+
+    --p-font: 400 20px ;
+    --p-font-color: var(--color-black);
+
+    --p-small-font-size: 400 15px ;
+    --p-small-font-color: var(--color-black-light);
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -7,6 +31,45 @@
 
 body {
     width: 100vw;
+    background-color: var(--main-ui-bg);
+}
+
+.heading {
+    font: var(--h1-font);
+    color: var(--h1-font-color);
+}
+
+.text {
+    font: var(--p-small-font-size);
+    color: var(--p-font-color);
+}
+
+.intro-welcome {
+    display: grid;
+    margin: 0 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'pp pp pp pp'
+    'heading heading heading heading'
+    'img img img img'
+    ;
+}
+
+.intro-welcome h2 {
+    grid-area: pp;
+    margin: 5rem 0 1rem 0;
+    font: var(--h2-font);
+    color: var(--h2-font-color);
+}
+
+.intro-welcome h1 {
+    grid-area: heading;
+}
+
+.intro-welcome img {
+    grid-area: img;
+    width: 100%;
 }
 
 .auth-nav {
@@ -17,45 +80,140 @@ body {
 .auth-nav ul {
     display: flex;
     width: 100vw;
-    margin-top: 1rem;
+    margin-top: 3rem;
     justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 
 .auth-nav li {
-    width: 8rem;
-    height: 4rem;
+    width: 16rem;
+    height: 3rem;
+    border-radius: 2rem;
+    margin: .3rem 0;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    background-color: var(--color-primary);
+}
+
+.auth-nav li:nth-child(1) a {
+    color: var(--main-ui-bg);
+}
+
+.auth-nav li:nth-child(2) a {
+    color: var(--h2-font-color-green);
+}
+
+.auth-nav li:nth-child(2) {
+    background-color: var(--main-ui-bg);
+    border: solid .15rem var(--color-primary);
 }
 
 .auth-nav li a {
-    font-size: 1.5rem;
+    font: var(--p-font);
+    color: var(--p-font-color);
+    cursor: pointer;
 }
 
 .auth-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    margin: 0 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'form form form form'
+    ;
 }
 
 .auth-form {
+    grid-area: form;
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 5rem;
+    width: 100%;
+    align-items: center;
+}
+
+.auth-form h1 {
+    margin: 0 0 2rem 0;
 }
 
 .auth-form input {
     height: 2rem;
-    padding-left: .5rem;
-    border: solid .1rem black;
-    margin: .5rem 0;
+    border: none;
+    border-bottom: solid .15rem var(--color-black);
+    margin: 1.75rem 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.auth-form input:focus {
+    outline: none;
+}
+
+.auth-form input::placeholder {
+    font: var(--p-font);
+    color: var(--color-black-light);
 }
 
 .auth-form button {
-    height: 2rem;
-    margin: .5rem 0;
-    border: solid .1rem black;
+    height: 3rem;
+    width: 16rem;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    background-color: var(--color-primary);
+    border: none;
+    font: var(--p-font);
+    color: var(--main-ui-bg);
 }
 
+.sign-up-ref {
+    text-decoration: underline;
+    color: var(--p-font-color);
+}
+
+/* BOTTOMNAV MOBILE */
+
+.bottomnav-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bottom-add_btn {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    background-color: var(--color-primary);
+    border: none;
+    color: White;
+    margin-top: -2.5rem;
+    justify-self: center;
+}
+
+.bottom-link_btn {
+    width: 4rem;
+    text-align: center;
+    height: 5rem;
+    padding-top: 0.5rem;
+    color: var(--color-black-light);
+}
+
+.bottom-link_current {
+    border-top: 3px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.bottom-link_current > #Path_779 {
+    border-top: 3px solid var(--color-primary);
+    color: var(--color-primary);
+}
