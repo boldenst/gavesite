@@ -27,7 +27,7 @@ loginForm.addEventListener('submit', (e) => {
         console.log(cred.user);
         loginForm.reset();
     })
-})
+});
 
 
 

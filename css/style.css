@@ -35,6 +35,7 @@
 
 body {
     width: 100vw;
+    background-color: var(--main-ui-bg);
 }
 
 .heading {
@@ -174,4 +175,48 @@ body {
 .sign-up-ref {
     text-decoration: underline;
     color: var(--p-font-color);
+}
+
+/* BOTTOMNAV MOBILE */
+
+.bottomnav-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bottom-add_btn {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    background-color: var(--color-primary);
+    border: none;
+    color: White;
+    margin-top: -2.5rem;
+    justify-self: center;
+}
+
+.bottom-link_btn {
+    width: 4rem;
+    text-align: center;
+    height: 5rem;
+    padding-top: 0.5rem;
+    color: var(--color-black-light);
+}
+
+.bottom-link_current {
+    border-top: 3px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.bottom-link_current > #Path_779 {
+    border-top: 3px solid var(--color-primary);
+    color: var(--color-primary);
 }
