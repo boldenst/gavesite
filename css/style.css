@@ -216,3 +216,7 @@ body {
     border-top: 3px solid var(--color-primary);
     color: var(--color-primary);
 }
+
+.hide {
+    display: none;
+}
