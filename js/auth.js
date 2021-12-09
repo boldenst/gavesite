@@ -17,8 +17,8 @@ signupForm.addEventListener('submit', (e) => {
 
     // Sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
     signupForm.reset();
+    window.location.href = "./dashboard.html";
     });
 });
 
