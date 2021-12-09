@@ -1,6 +1,16 @@
 auth.onAuthStateChanged(user => {
     if (user) {
         window.location.href = "#";
+        // account info
+        const accountDetails = document.querySelector('.account-details');
+        db.collection('users').doc(user.uid).get().then(doc => {
+        const html = `
+        <div>Username: ${doc.data().username}</div>
+        <div>Email: ${user.email}</div>
+        `;
+        accountDetails.innerHTML = html;    
+        })
+
     } else {
         window.location.href = "./index.html";
     }
@@ -22,3 +32,4 @@ createForm.addEventListener('submit', (e) => {
         console.log(err.message)
     });
 });
+
