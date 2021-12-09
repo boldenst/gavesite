@@ -1,6 +1,12 @@
+
 auth.onAuthStateChanged(user => {
     if (user) {
         console.log('User logged in:', user)
+
+        //Get data
+        db.collection('gifts').onSnapshot(snapshot => {
+            setupGifts(snapshot.docs);
+        });
     } else {
         console.log('User logged out!');
     }
@@ -18,7 +24,7 @@ signupForm.addEventListener('submit', (e) => {
     // Sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
     signupForm.reset();
-    window.location.href = "./dashboard.html";
+    window.location.href = "./giftlist.html";
     });
 });
 
@@ -34,7 +40,7 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         // console.log(cred.user);
         loginForm.reset();
-        window.location.href = "./dashboard.html";
+        window.location.href = "./giftlist.html";
     });
 });
 
