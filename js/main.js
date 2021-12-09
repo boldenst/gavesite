@@ -1,10 +1,12 @@
+const giftList = document.querySelector('.gifts');
+const accountDetails = document.querySelector('.account-details');
+
 
 function toDashboard() {
     window.location.href = "./dashboard.html";
     console.log('hello')
 };
 
-const giftList = document.querySelector('.gifts');
 
 // Setup gifts
 const setupGifts = (data) => {
@@ -21,10 +23,23 @@ const setupGifts = (data) => {
         `;
         html += li
     });
-
     giftList.innerHTML = html;
 }
 
+
+const settingsUI = (user) => {
+    if (user) {
+        // account info
+        const html = `
+        <div>Logged in as ${user.email}</div>
+        `;
+        accountDetails.innerHTML = html;
+    } else {
+        //Hide account details
+        accountDetails.innerHTML = '';
+    }
+};
+
 $(".bottom-add_btn").click(function(){
     $(".add-gift__popup").toggleClass("pop-up__show");
-  });
+});

@@ -1,13 +1,16 @@
-
+// Listen for auth status changes
 auth.onAuthStateChanged(user => {
+    console.log(user);
     if (user) {
         console.log('User logged in:', user)
 
         //Get data
         db.collection('gifts').onSnapshot(snapshot => {
             setupGifts(snapshot.docs);
+            settingsUI(user);
         });
     } else {
+        settingsUI();
         console.log('User logged out!');
     }
 });
@@ -23,8 +26,12 @@ signupForm.addEventListener('submit', (e) => {
 
     // Sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    signupForm.reset();
-    window.location.href = "./giftlist.html";
+        return db.collection('users').doc(cred.user.uid).set({
+            username: signupForm['signup-username'].value
+        });
+    }).then(() => {
+        signupForm.reset();
+        window.location.href = "./giftlist.html";
     });
 });
 
