@@ -16,6 +16,8 @@ auth.onAuthStateChanged(user => {
     }
 });
 
+
+
 //Create new gift
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {

@@ -14,10 +14,10 @@
     --h2-font-color: var(--color-black);
     --h2-font-color-green: var(--color-primary);
 
-    --p-font: 400 15px Graphie;
+    --p-font: 400 20px Graphie;
     --p-font-color: var(--color-black);
 
-    --p-small-font-size: 400 10px Graphie;
+    --p-small-font: 400 15px Graphie;
     --p-small-font-color: var(--color-black-light);
 }
 
@@ -54,8 +54,12 @@ p {
 }
 
 .text {
-    font: var(--p-small-font-size);
+    font: var(--p-font);
     color: var(--p-font-color);
+}
+
+.small-text {
+    font: var(--p-small-font);
 }
 
 .intro-welcome {
@@ -245,6 +249,8 @@ p {
     display: none;
 }
 
+/* Settings */
+
 .settings-open, .settings-close {
     position: absolute;
     top: 1.5rem;
@@ -263,6 +269,35 @@ p {
     background-color: var(--color-red);
     background-image: url(/images/icons/settings-icon.png);
 }
+
+.settings-container {
+    display: grid;
+    margin: 2rem 2rem 0 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'heading heading heading heading'
+    'acc-detail acc-detail acc-detail acc-detail'
+    ;
+}
+
+.account-details {
+    grid-area: acc-detail;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.account-details div { /* Give class in app.js */
+    font: var(--p-font);
+    color: var(--p-font-color);
+    margin: 1rem 0;
+}
+
+.settings-container h1 {
+    grid-area: heading;
+}
+
+
 
 #logout {
     width: 16rem;
@@ -348,18 +383,18 @@ p {
 .input-field label {
     font: var(--p-font);
     color: var(--p-font-color);
-    margin: .5rem 0;
+    margin: 2rem 0 .5rem 0;
 }
 
 .input-field input {
-    padding-left: .5rem;
+    padding: .5rem;
     border: none;
     border-bottom: solid .15rem var(--color-black);
     height: 2rem;
 }
 
 .input-field textarea {
-    padding-left: .5rem;
+    padding: .5rem 0 0 .5rem;
     border: none;
     border-bottom: solid .15rem var(--color-black);
     resize: vertical;

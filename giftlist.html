@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Gave App</title>
+    <title>Min ønskeliste</title>
 </head>
 
 <body>
@@ -18,18 +18,18 @@
     <div class="add-gift__popup">
         <form id="create-form">
             <div class="input-field">
-                <label for="title">Gift title</label>
+                <label for="title">Gave:</label>
                 <input type="text" id="title" required>
             </div>
             <div class="input-field">
-                <label for="title">Content</label>
+                <label for="title">Indhold</label>
                 <textarea id="content" required></textarea>
             </div>
             <button onclick="submit">+</button>
         </form>
     </div>
     <nav class="bottomnav-mobile">
-        <a class="bottom-link_btn bottom-link_current" href="#">
+        <a class="bottom-link_btn" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="28.312"
                 height="28.406" viewBox="0 0 28.312 28.406">
                 <path id="Path_779" data-name="Path 779"
@@ -38,7 +38,7 @@
                     stroke-linejoin="round" stroke-width="2" />
             </svg>Gaver</a>
         <button class="bottom-add_btn">+</button>
-        <a class="bottom-link_btn" href="mywishlist.html"> <img src="./images/wishlist-icon.svg" alt=""> Ønskeliste</a>
+        <a class="bottom-link_btn bottom-link_current" href="#"> <img src="./images/wishlist-icon.svg" alt=""> Ønskeliste</a>
     </nav>
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
