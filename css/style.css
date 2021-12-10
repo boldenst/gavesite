@@ -7,18 +7,23 @@
     --color-black: #1A1A1A;
     --color-black-light: #ACACAC;
     
-    --h1-font: 700 40px ;
+    --h1-font: 700 40px Graphie;
     --h1-font-color: var(--color-black);
 
-    --h2-font: 600 25px ;
+    --h2-font: 600 25px Graphie;
     --h2-font-color: var(--color-black);
     --h2-font-color-green: var(--color-primary);
 
-    --p-font: 400 20px ;
+    --p-font: 400 20px Graphie;
     --p-font-color: var(--color-black);
 
-    --p-small-font-size: 400 15px ;
+    --p-small-font: 400 15px Graphie;
     --p-small-font-color: var(--color-black-light);
+}
+
+@font-face {
+    font-family: Graphie;
+    src: url(https://use.typekit.net/ral6jgm.css);
 }
 
 * {
@@ -38,9 +43,23 @@ body {
     color: var(--h1-font-color);
 }
 
-.text {
-    font: var(--p-small-font-size);
+h2 {
+    font: var(--h2-font);
+    color: var(--h2-font-color);
+}
+
+p {
+    font: var(--p-font);
     color: var(--p-font-color);
+}
+
+.text {
+    font: var(--p-font);
+    color: var(--p-font-color);
+}
+
+.small-text {
+    font: var(--p-small-font);
 }
 
 .intro-welcome {
@@ -95,6 +114,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--color-primary);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+
 }
 
 .auth-nav li:nth-child(1) a {
@@ -139,6 +160,11 @@ body {
     margin: 0 0 2rem 0;
 }
 
+.auth-form h2 {
+    font: var(--h2-font);
+    color: var(--h2-font-color);
+}
+
 .auth-form input {
     height: 2rem;
     border: none;
@@ -166,6 +192,8 @@ body {
     border: none;
     font: var(--p-font);
     color: var(--main-ui-bg);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+
 }
 
 .sign-up-ref {
@@ -218,5 +246,183 @@ body {
 }
 
 .hide {
+    display: none;
+}
+
+/* Settings */
+
+.settings-open, .settings-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+    background-image: url(/images/icons/settings-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.settings-close {
+    background-color: var(--color-red);
+    background-image: url(/images/icons/settings-icon.png);
+}
+
+.settings-container {
+    display: grid;
+    margin: 2rem 2rem 0 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'heading heading heading heading'
+    'acc-detail acc-detail acc-detail acc-detail'
+    ;
+}
+
+.account-details {
+    grid-area: acc-detail;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.account-details div { /* Give class in app.js */
+    font: var(--p-font);
+    color: var(--p-font-color);
+    margin: 1rem 0;
+}
+
+.settings-container h1 {
+    grid-area: heading;
+}
+
+
+
+#logout {
+    width: 16rem;
+    height: 3rem;
+    border-radius: 2rem;
+    margin: .3rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-red);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+    position: absolute;
+    bottom: 2rem;
+    color: var(--main-ui-bg);
+    left: calc(50% - 8rem);
+}
+
+/* POP UP ADD PERSON */
+.add-gift__popup {
+    display: none;
+    z-index: 10;
+    top: 10vh;
+    left: 10vw;
+    position: fixed;
+    width: 80vw;
+    height: 50vh;
+    background-color: var(--nav-background)
+}
+
+.pop-up__show {
+    display: block;
+}
+
+
+
+/* Giftlist */
+
+.giftlist-main {
+    display: grid;
+    margin: 2rem 2rem 0 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'heading heading heading heading'
+    'list list list list'
+    ;
+}
+
+.giftlist-main h2 {
+    grid-area: heading;
+}
+
+.giftlist-main ul {
+    grid-area: list;
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.giftlist-main ul li {
+    margin: 1rem 0;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 10%);
+    background-color: var(--main-ui-bg);
+    padding: 1rem;
+}
+
+#create-form {
+    margin: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 4rem);
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font: var(--p-font);
+    color: var(--p-font-color);
+    margin: 2rem 0 .5rem 0;
+}
+
+.input-field input {
+    padding: .5rem;
+    border: none;
+    border-bottom: solid .15rem var(--color-black);
+    height: 2rem;
+}
+
+.input-field textarea {
+    padding: .5rem 0 0 .5rem;
+    border: none;
+    border-bottom: solid .15rem var(--color-black);
+    resize: vertical;
+}
+
+#create-form button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color:var(--color-primary);
+    border: none;
+    color: var(--main-ui-bg);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font: var(--h2-font);
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 1.25);
+}
+
+.gifts {
+    margin-top: 10rem;
+    height: 35rem;
+    overflow-y: auto;
+}
+
+.gifts::-webkit-scrollbar {
     display: none;
 }

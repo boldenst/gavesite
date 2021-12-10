@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opret bruger</title>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Gave App</title>
 </head>
 <body>
-    <a href="index.html">Tilbage</a>
+
     <!-- Sign up -->
     <div id="modal-signup" class="modal">
         <div class="auth-container signup-container">
             <form id="signup-form" class="auth-form">
-                <h1 class="heading">Registrer</h1>
-                <input id="signup-email" type="email" placeholder="Email">
-                <input id="signup-password" type="password" placeholder="Password">
-                <button class="auth-signup-btn">Registrer</button>
+                <h2>Opret bruger</h2>
+                <input id="signup-username" type="username" placeholder="Username" required/>
+                <input id="signup-email" type="email" placeholder="Email" required/>
+                <input id="signup-password" type="password" placeholder="Password" required/>
+                <button class="auth-signup-btn">Opret bruger</button>
             </form>
         </div>
     </div>
+
+    <!-- Log in -->
+    <div class="auth-container login-container">
+        <form id="login-form" class="auth-form">
+        </form>
+    </div>
+
     
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
