@@ -63,31 +63,30 @@ p {
 }
 
 .intro-welcome {
+    padding-top: 5rem;
+    text-align: center;
     display: grid;
     margin: 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-    'pp pp pp pp'
+    '. logo logo .'
     'heading heading heading heading'
-    'img img img img'
+    'sub sub sub sub'
     ;
 }
 
-.intro-welcome h2 {
-    grid-area: pp;
-    margin: 5rem 0 1rem 0;
-    font: var(--h2-font);
-    color: var(--h2-font-color);
+#logo {
+    grid-area: logo;
+    margin: 2rem auto;
 }
 
 .intro-welcome h1 {
     grid-area: heading;
 }
 
-.intro-welcome img {
-    grid-area: img;
-    width: 100%;
+.intro-welcome h2 {
+    grid-area: sub;
 }
 
 .auth-nav {
@@ -114,7 +113,6 @@ p {
     justify-content: center;
     align-items: center;
     background-color: var(--color-primary);
-    box-shadow: 3px 3px 6px var(--color-black-light);
 
 }
 
@@ -353,17 +351,22 @@ p {
 
 .giftlist-main ul {
     grid-area: list;
-    margin-top: 2rem;
+    height: calc(100vh - 11rem);
+    padding-bottom: 8rem;
+    margin-top: 3rem;
     width: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .giftlist-main ul li {
     margin: 1rem 0;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 10%);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 10%);
     background-color: var(--main-ui-bg);
     padding: 1rem;
+    width: 16rem;
 }
 
 #create-form {
@@ -387,17 +390,24 @@ p {
 }
 
 .input-field input {
-    padding: .5rem;
+    padding: 0 .5rem 0 0;
     border: none;
     border-bottom: solid .15rem var(--color-black);
     height: 2rem;
 }
 
 .input-field textarea {
-    padding: .5rem 0 0 .5rem;
+    padding: 0 .5rem 0 0;
     border: none;
     border-bottom: solid .15rem var(--color-black);
     resize: vertical;
+    height: 2rem;
+    font: var(--p-small-font);
+    color: var(--p-font-color);
+}
+
+.input-field input:focus, .input-field textarea:focus {
+    outline: none;
 }
 
 #create-form button {
