@@ -9,23 +9,22 @@ function toDashboard() {
 
 
 // Setup gifts
-const setupGifts = (data) => {
-    let html = '';
-    data.forEach(doc => {
-        const gifts = doc.data();
-        const li = `
-            <li>
-                <div class="gift-container">
-                    <h2>${gifts.title}</h2>
-                    <p>${gifts.price} kr</p>
-                    <p>${gifts.content}</p>
-                </div>
-            </li>
-        `;
-        html += li
-    });
-    giftList.innerHTML = html;
-}
+// const setupGifts = (data) => {
+//     let html = '';
+//     data.forEach(doc => {
+//         const gifts = doc.data();
+//         const li = `
+//             <li>
+//                 <div class="gift-container">
+//                     <h2>${gifts.title}</h2>
+//                     <p>${gifts.content}</p>
+//                 </div>
+//             </li>
+//         `;
+//         html += li
+//     });
+//     giftList.innerHTML = html;
+// }
 
 
 const settingsUI = (user) => {

@@ -10,28 +10,11 @@
 </head>
 
 <body>
-    <a class="settings-open" href="./settings.html"></a>
-    <main class="giftlist-main">
+    <header class="giftlist-header">
         <h2>Min ønskeliste</h2>
-            <ul class="gifts"></ul>
-    </main>
-    <div class="add-gift__popup">
-        <form id="create-form">
-            <div class="input-field">
-                <label for="title">Gave:</label>
-                <input type="text" id="title" required>
-            </div>
-            <div class="input-field">
-                <label for="title">Pris</label>
-                <input id="price" required>
-            </div>
-            <div class="input-field">
-                <label for="title">Note/link</label>
-                <textarea id="content" required></textarea>
-            </div>
-            <button onclick="submit">+</button>
-        </form>
-    </div>
+        <a class="settings-open" href="./settings.html"></a>
+    </header>
+    <a class="settings-open" href="./settings.html"></a>
     <nav class="bottomnav-mobile">
         <a class="bottom-link_btn" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="28.312"
@@ -42,7 +25,7 @@
                     stroke-linejoin="round" stroke-width="2" />
             </svg>Gaver</a>
         <button class="bottom-add_btn">+</button>
-        <a class="bottom-link_btn bottom-link_current" href="#"> <img src="./images/wishlist-icon.svg" alt=""> Ønskeliste</a>
+        <a class="bottom-link_btn bottom-link_current" href="./giftlist.html"> <img src="./images/wishlist-icon.svg" alt=""> Ønskeliste</a>
     </nav>
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
