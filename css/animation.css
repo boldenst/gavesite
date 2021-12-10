@@ -99,3 +99,19 @@
 
     }
 }
+
+.add-gift__popup {
+    animation-name: popup;
+    animation: popup .5s forwards;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(10px);
+        height: 60vh;
+    }
+    100% {
+        transform: translateY(0px);
+        height: 70vh;
+    }
+}

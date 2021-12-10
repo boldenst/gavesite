@@ -250,9 +250,6 @@ p {
 /* Settings */
 
 .settings-open, .settings-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
@@ -318,12 +315,23 @@ p {
 .add-gift__popup {
     display: none;
     z-index: 10;
-    top: 10vh;
+    bottom: 18vh;
     left: 10vw;
     position: fixed;
     width: 80vw;
-    height: 50vh;
-    background-color: var(--nav-background)
+    height: 70vh;
+    background-color: var(--nav-background);
+}
+
+.add-gift__popup:before {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: calc(50% - 1rem);
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--nav-background);
+    transform: rotate(45deg);
 }
 
 .pop-up__show {
@@ -334,20 +342,30 @@ p {
 
 /* Giftlist */
 
+.giftlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    width: calc(100vw - 4rem);
+    background-color: var(--main-ui-bg);
+    padding: 0 2rem;
+}
+
 .giftlist-main {
     display: grid;
     margin: 2rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-    'heading heading heading heading'
     'list list list list'
     ;
 }
 
-.giftlist-main h2 {
-    grid-area: heading;
-}
+
 
 .giftlist-main ul {
     grid-area: list;
