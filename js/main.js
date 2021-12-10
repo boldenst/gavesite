@@ -17,6 +17,7 @@ const setupGifts = (data) => {
             <li>
                 <div class="gift-container">
                     <h2>${gifts.title}</h2>
+                    <p>${gifts.price} kr</p>
                     <p>${gifts.content}</p>
                 </div>
             </li>
