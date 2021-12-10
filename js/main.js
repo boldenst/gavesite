@@ -43,3 +43,9 @@ const settingsUI = (user) => {
 $(".bottom-add_btn").click(function(){
     $(".add-gift__popup").toggleClass("pop-up__show");
 });
+
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('../sw.js')
+      .then(reg => console.log('service worker registered'))
+      .catch(err => console.log('service worker not registered', err));
+  }
