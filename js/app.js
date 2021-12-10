@@ -25,7 +25,6 @@ createForm.addEventListener('submit', (e) => {
 
     db.collection('gifts').add({
         title: createForm['title'].value,
-        price: createForm['price'].value,
         content: createForm['content'].value
     }).then(() => {
         //Reset form

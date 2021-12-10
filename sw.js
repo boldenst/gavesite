@@ -2,7 +2,7 @@ const staticCacheName = 'site-static-v1';
 const assets = [
   '/',
   '/index.html',
-  '/js/main.js',
+  '/assets/js/ui.js',
   '/css/style.css',
   '/assets/images/background-home.jpg',
   'https://fonts.googleapis.com/css?family=Lato:300,400,700',
