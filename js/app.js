@@ -2,28 +2,43 @@
 function renderGifts(doc) {
     let li = document.createElement('li');
     let container = document.createElement('div');
+    container.classList.add('render-gift-container');
     let title = document.createElement('h2');
+    title.classList.add('render-gift-title');
+    let elementContainer = document.createElement('div');
+    elementContainer.classList.add('render-gift-element-container');
+    let priceContainer = document.createElement('div');
+    priceContainer.classList.add('render-gift-price-container');
+    let priceContainerColumn = document.createElement('div');
+    priceContainerColumn.classList.add('render-gift-price-container-column')
     let priceTitle = document.createElement('p');
     let price = document.createElement('p');
+    let priceCurrency = document.createElement('p');
+    priceCurrency.classList.add('render-gift-price-currency')
     let contentTitle = document.createElement('p');
     let content = document.createElement('p');
     let deleteItem = document.createElement('div');
+    deleteItem.classList.add('delete-item')
 
     li.setAttribute('data-id', doc.id);
     title.textContent = doc.data().title;
     priceTitle.textContent = 'Pris:';
     price.textContent = doc.data().price;
-    contentTitle.textContent = 'Indhold:';
+    priceCurrency.textContent = 'kr.';
+    contentTitle.textContent = 'Note:';
     content.textContent = doc.data().content;
-    deleteItem.textContent = 'X';
 
-    li.appendChild(container);
     li.appendChild(deleteItem);
-    container.appendChild(title);
-    container.appendChild(priceTitle);
-    container.appendChild(price);
-    container.appendChild(contentTitle);
-    container.appendChild(content);
+    li.appendChild(title);
+    li.appendChild(container);
+    container.appendChild(priceContainerColumn);
+    container.appendChild(elementContainer);
+    priceContainerColumn.appendChild(priceTitle)
+    priceContainerColumn.appendChild(priceContainer);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(priceCurrency);
+    elementContainer.appendChild(contentTitle);
+    elementContainer.appendChild(content);
 
     giftList.appendChild(li);
 
