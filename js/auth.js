@@ -6,7 +6,7 @@ auth.onAuthStateChanged(user => {
 
         //Get data
         db.collection('gifts').onSnapshot(snapshot => {
-            setupGifts(snapshot.docs);
+            // setupGifts(snapshot.docs);
             settingsUI(user);
         });
 
