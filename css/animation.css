@@ -18,17 +18,17 @@
     transform: scale(2);
     transform-origin: 100px 100px;
     animation-name: scale-down;
-    animation: scale-down .75s 2s forwards;
+    animation: scale-down .5s 2s forwards;
 }
 
 #logo-box-bottom-left {
     animation-name: box-bottom-slide;
-    animation: box-bottom-slide .75s 2s forwards;
+    animation: box-bottom-slide .5s 2s forwards;
 }
 
 #logo-box-lid {
     animation-name: box-lid-slide;
-    animation: box-lid-slide .75s 2s forwards;
+    animation: box-lid-slide .5s 2s forwards;
 }
 
 #logo-check {

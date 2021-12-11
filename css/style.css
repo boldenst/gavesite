@@ -454,3 +454,61 @@ p {
 .gifts::-webkit-scrollbar {
     display: none;
 }
+
+.render-gift-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.render-gift-element-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.render-gift-price-container {
+    display: flex;
+}
+
+.render-gift-price-currency {
+    margin-left: .3rem;
+    font-style: italic;
+}
+
+
+.delete-item {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--main-ui-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 14.7rem;
+}
+
+.delete-item:before, .delete-item:after {
+    content: '';
+    position: relative;
+    left: .1rem;
+    width: .2rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-red);
+    transform: rotate(45deg);
+}
+
+.delete-item:after {
+    transform: rotate(-45deg);
+    left: -.1rem;
+}
+
+.render-gift-title {
+    width: 80%;
+    margin-top: -1.5rem;
+}
+
+.render-gift-price-container-column {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
