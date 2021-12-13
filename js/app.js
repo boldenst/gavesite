@@ -67,27 +67,22 @@ auth.onAuthStateChanged(user => {
         accountDetails.innerHTML = html;    
         });
         //Get data
-        gifts.orderBy('title').get().then((snapshot) => {
+        gifts.where('customid', '==', user.uid).orderBy('title').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                 renderGifts(doc);
             });
             settingsUI(user);
         });
-    } else {
-        window.location.href = "./index.html";
-    }
-});
-
-
-//Create new gift
+        //Create new gift
 const createForm = document.querySelector('#create-form');
 
-createForm.addEventListener('submit', (e) => {
+    createForm.addEventListener('submit', (e) => {
     e.preventDefault();
     gifts.add({
         title: createForm.title.value,
         price: createForm.price.value,
-        content: createForm.content.value
+        content: createForm.content.value,
+        customid: user.uid
     }).then(() => {
         //Reset form
         createForm.reset();
@@ -96,17 +91,7 @@ createForm.addEventListener('submit', (e) => {
         console.log(err.message)
     });
 })
-
-//real time listener
-
-gifts.orderBy('title').onSnapshot(snapshot => {
-    let changes = snapshot.docChanges();
-    changes.forEach(change => {
-        if (change.type == 'added') {
-            renderGifts(change.doc);
-        } else if (change.type == 'removed') {
-            let li = giftList.querySelector('[data-id=' + change.doc.id + ']');
-            giftList.removeChild(li);
-        }
-    })
-})
+    } else {
+        window.location.href = "./index.html";
+    }
+});

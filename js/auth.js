@@ -10,6 +10,7 @@ auth.onAuthStateChanged(user => {
             // setupGifts(snapshot.docs);
             settingsUI(user);
         });
+        Firebase.auth().createCustomToken(UID)
 
     } else {
         settingsUI();
