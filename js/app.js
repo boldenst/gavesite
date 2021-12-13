@@ -89,23 +89,24 @@ auth.onAuthStateChanged(user => {
         });
 
         //Create new gift
-    const createForm = document.querySelector('#create-form');
-    createForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    gifts.add({
-        title: createForm.title.value,
-        price: createForm.price.value,
-        content: createForm.content.value,
-        customid: user.uid
-    }).then(() => {
-        //Reset form
-        createForm.reset();
-        location.reload();
-        $('.pop-up__show').removeClass('pop-up__show')
-    }).catch(err => {
-        console.log(err.message)
-    });
-})} else {
+        const createForm = document.querySelector('#create-form');
+        createForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            gifts.add({
+                title: createForm.title.value,
+                price: createForm.price.value,
+                content: createForm.content.value,
+                customid: user.uid
+            }).then(() => {
+                //Reset form
+                createForm.reset();
+                location.reload();
+                $('.pop-up__show').removeClass('pop-up__show');
+            }).catch(err => {
+                console.log(err.message)
+            });
+        });
+    } else {
         window.location.href = "./index.html";
     }
 });
