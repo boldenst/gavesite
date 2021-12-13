@@ -19,3 +19,7 @@
         db.settings({
             timestampsInSnapshots: true
         });
+
+        firebase.firestore().settings({
+            cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+        });
