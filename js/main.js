@@ -8,26 +8,6 @@ function toDashboard() {
 };
 
 
-// Setup gifts
-const setupGifts = (data) => {
-    let html = '';
-    data.forEach(doc => {
-        const gifts = doc.data();
-        const li = `
-            <li>
-                <div class="gift-container">
-                    <h2>${gifts.title}</h2>
-                    <p>${gifts.price} kr</p>
-                    <p>${gifts.content}</p>
-                </div>
-            </li>
-        `;
-        html += li
-    });
-    giftList.innerHTML = html;
-}
-
-
 const settingsUI = (user) => {
     if (user) {
         // account info
@@ -47,6 +27,6 @@ $(".bottom-add_btn").click(function(){
 
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('../sw.js')
-      .then(reg => console.log('service worker registered'))
-      .catch(err => console.log('service worker not registered', err));
-  }
+        .then(reg => console.log('service worker registered'))
+        .catch(err => console.log('service worker not registered', err));
+    }
