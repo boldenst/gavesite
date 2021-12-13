@@ -191,7 +191,6 @@ p {
     font: var(--p-font);
     color: var(--main-ui-bg);
     box-shadow: 3px 3px 6px var(--color-black-light);
-
 }
 
 .sign-up-ref {
@@ -211,6 +210,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index: 5;
 }
 
 .bottom-add_btn {
@@ -265,7 +265,7 @@ p {
     background-image: url(/images/icons/settings-icon.png);
 }
 
-.settings-container {
+.settings-container-userinfo {
     display: grid;
     margin: 2rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
@@ -273,6 +273,7 @@ p {
     grid-template-areas: 
     'heading heading heading heading'
     'acc-detail acc-detail acc-detail acc-detail'
+    'theme theme theme theme'
     ;
 }
 
@@ -288,10 +289,22 @@ p {
     margin: 1rem 0;
 }
 
-.settings-container h1 {
+.settings-container-userinfo h1 {
     grid-area: heading;
 }
 
+.settings-container-userinfo h2 {
+    grid-area: theme;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.change-email {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid .2rem var(--color-primary);
+
+}
 
 
 #logout {
@@ -338,8 +351,6 @@ p {
     display: block;
 }
 
-
-
 /* Giftlist */
 
 .giftlist-header {
@@ -353,6 +364,7 @@ p {
     width: calc(100vw - 4rem);
     background-color: var(--main-ui-bg);
     padding: 0 2rem;
+    z-index: 5;
 }
 
 .giftlist-main {
@@ -485,6 +497,7 @@ p {
     align-items: center;
     position: relative;
     left: 14.7rem;
+    z-index: 1;
 }
 
 .delete-item:before, .delete-item:after {

@@ -1,5 +1,4 @@
 let gifts = db.collection('gifts');
-// let uniqueUser = cred.user.uid;
 
 // Creating elements
 function renderGifts(doc) {
@@ -53,7 +52,6 @@ function renderGifts(doc) {
     })
 }
 
-
 auth.onAuthStateChanged(user => {
     if (user) {
         window.location.href = "#";
@@ -61,12 +59,21 @@ auth.onAuthStateChanged(user => {
         const accountDetails = document.querySelector('.account-details');
         db.collection('users').doc(user.uid).get().then(doc => {
         const html = `
-        <div>Username: ${doc.data().username}</div>
-        <div>Email: ${user.email}</div>
+        <div>
+            <p>Navn:</p>
+            <p> ${doc.data().username}</p>
+        </div>
+        <div>
+            <p>Email:</p>
+            <div>
+                <p> ${user.email}</p>
+                <div class="change-email"></div>
+            </div>    
+        </div>
         `;
         accountDetails.innerHTML = html;    
         });
-        //Get data
+//Get data
         gifts.where('customid', '==', user.uid).orderBy('title').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                 renderGifts(doc);

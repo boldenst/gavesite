@@ -10,14 +10,11 @@ auth.onAuthStateChanged(user => {
             // setupGifts(snapshot.docs);
             settingsUI(user);
         });
-        Firebase.auth().createCustomToken(UID)
-
     } else {
         settingsUI();
         console.log('User logged out!');
     }
 });
-
 
 // Sign up method
 const signupForm = document.querySelector('#signup-form');
