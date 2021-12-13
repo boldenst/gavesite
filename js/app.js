@@ -1,6 +1,7 @@
 let gifts = db.collection('gifts');
+let people = db.collection('people');
 
-// Creating elements
+// Creating elements for renderGifts
 function renderGifts(doc) {
     let li = document.createElement('li');
     let container = document.createElement('div');
@@ -48,7 +49,9 @@ function renderGifts(doc) {
     deleteItem.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('gifts').doc(id).delete();
+        db.collection('gifts').doc(id).delete().then(() => {
+            location.reload();
+        })
     })
 }
 
@@ -61,28 +64,32 @@ auth.onAuthStateChanged(user => {
         const html = `
         <div>
             <p>Navn:</p>
-            <p> ${doc.data().username}</p>
+            <div>
+                <p> ${doc.data().username}</p>
+                <div class="change-info change-username"</div>
+            </div>
         </div>
         <div>
             <p>Email:</p>
             <div>
                 <p> ${user.email}</p>
-                <div class="change-email"></div>
+                <div class="change-info change-email"></div>
             </div>    
         </div>
         `;
         accountDetails.innerHTML = html;    
         });
-//Get data
-        gifts.where('customid', '==', user.uid).orderBy('title').get().then((snapshot) => {
+
+        //Get data for "Min ønskeliste"
+        gifts.where('customid', '==', user.uid).orderBy('title').onSnapshot((snapshot) => {
             snapshot.docs.forEach(doc => {
                 renderGifts(doc);
             });
-            settingsUI(user);
+            // settingsUI(user);
         });
-        //Create new gift
-const createForm = document.querySelector('#create-form');
 
+        //Create new gift
+    const createForm = document.querySelector('#create-form');
     createForm.addEventListener('submit', (e) => {
     e.preventDefault();
     gifts.add({
@@ -93,12 +100,13 @@ const createForm = document.querySelector('#create-form');
     }).then(() => {
         //Reset form
         createForm.reset();
+        location.reload();
         $('.pop-up__show').removeClass('pop-up__show')
     }).catch(err => {
         console.log(err.message)
     });
-})
-    } else {
+})} else {
         window.location.href = "./index.html";
     }
 });
+

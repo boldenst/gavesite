@@ -4,12 +4,6 @@ auth.onAuthStateChanged(user => {
     console.log(user);
     if (user) {
         console.log('User logged in:', user)
-
-        //Get data
-        db.collection('gifts').onSnapshot(snapshot => {
-            // setupGifts(snapshot.docs);
-            settingsUI(user);
-        });
     } else {
         settingsUI();
         console.log('User logged out!');
