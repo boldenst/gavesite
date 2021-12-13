@@ -1,3 +1,6 @@
+let gifts = db.collection('gifts');
+// let uniqueUser = cred.user.uid;
+
 // Creating elements
 function renderGifts(doc) {
     let li = document.createElement('li');
@@ -64,14 +67,12 @@ auth.onAuthStateChanged(user => {
         accountDetails.innerHTML = html;    
         });
         //Get data
-        db.collection('gifts').orderBy('title').get().then((snapshot) => {
+        gifts.orderBy('title').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                 renderGifts(doc);
             });
             settingsUI(user);
         });
-
-
     } else {
         window.location.href = "./index.html";
     }
@@ -83,7 +84,7 @@ const createForm = document.querySelector('#create-form');
 
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('gifts').add({
+    gifts.add({
         title: createForm.title.value,
         price: createForm.price.value,
         content: createForm.content.value
@@ -98,7 +99,7 @@ createForm.addEventListener('submit', (e) => {
 
 //real time listener
 
-db.collection('gifts').orderBy('title').onSnapshot(snapshot => {
+gifts.orderBy('title').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == 'added') {
