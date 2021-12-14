@@ -399,7 +399,7 @@ p {
     width: 16rem;
 }
 
-#create-form {
+#people-form, #gift-form {
     margin: 2rem 2rem 0 2rem;
     display: flex;
     flex-direction: column;
@@ -440,7 +440,7 @@ p {
     outline: none;
 }
 
-#create-form button {
+#people-form button, #gift-form button {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -486,36 +486,6 @@ p {
     font-style: italic;
 }
 
-
-.delete-item {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--main-ui-bg);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 14.7rem;
-    z-index: 1;
-}
-
-.delete-item:before, .delete-item:after {
-    content: '';
-    position: relative;
-    left: .1rem;
-    width: .2rem;
-    height: 1rem;
-    border-radius: 1rem;
-    background-color: var(--color-red);
-    transform: rotate(45deg);
-}
-
-.delete-item:after {
-    transform: rotate(-45deg);
-    left: -.1rem;
-}
-
 .render-gift-title {
     width: 80%;
     margin-top: -1.5rem;
@@ -527,7 +497,6 @@ p {
 }
 
 /* GIFTLIST */
-
 
 .people-added-content-container {
     display: flex;
@@ -550,9 +519,16 @@ p {
 .delete-person {
     width: 2rem;
     height: 2rem;
-    background-color: var(--color-black-light);
     position: relative;
     left: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-person p {
+    color: var(--color-red);
+    font-weight: bold;
 }
 
 .people-added-add-info {
