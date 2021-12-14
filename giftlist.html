@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ral6jgm.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animation.css">
     <title>Min ønskeliste</title>
@@ -22,7 +23,7 @@
         <form id="people-form">
             <div class="input-field">
                 <label>Person:</label>
-                <input type="name" id="name" name="name" required>
+                <input type="title" id="title" name="title" required>
             </div>
             <button onclick="submit">+</button>
         </form>
@@ -43,10 +44,10 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/firebase.js"></script>
     <script src="./js/auth.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/people.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

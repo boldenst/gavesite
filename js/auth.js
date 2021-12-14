@@ -1,12 +1,12 @@
 
 // Listen for auth status changes
 auth.onAuthStateChanged(user => {
-    console.log(user);
+    // console.log(user);
     if (user) {
-        console.log('User logged in:', user)
+        // console.log('User logged in:', user)
     } else {
         settingsUI();
-        console.log('User logged out!');
+        // console.log('User logged out!');
     }
 });
 
