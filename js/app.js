@@ -1,5 +1,4 @@
 let gifts = db.collection('gifts');
-let people = db.collection('people');
 
 // Creating elements for renderGifts
 function renderGifts(doc) {
