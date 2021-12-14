@@ -1,6 +1,5 @@
 let people = db.collection('people');
 const peopleList = document.querySelector('.people');
-
 auth.onAuthStateChanged(user => {
     if (user) {
         window.location.href = "#";
@@ -43,10 +42,35 @@ auth.onAuthStateChanged(user => {
             peopleList.innerHTML = html;
         }
 
+        const wishesInput = (data) => {
+            let html = '';
+            data.forEach(doc => {
+                const people = doc.data();
+                const li = `
+                    <li data-id="${doc.id}" class="people-added-container">
+                    <div class="delete-person">
+                        <div class="delete-person-bin"></div>
+                    </div>    
+                    <div class="people-added-content-container">    
+                            <div class="people-added-img"></div>
+                                <h2>${wishes.title}</h2>
+                            </div>
+                        <button class="people-added-add-info">+</button>
+                    </li>
+                `;
+                html += li
+            });
+            peopleList.innerHTML = html;
+        }
+
         //Get data for "Gaver til andre"
 
         people.where('customid', '==', user.uid).orderBy('title').onSnapshot(snapshot => {
             peopleInput(snapshot.docs);
+        });
+
+        people.doc(doc.id).collection('wishes').orderBy('title').onSnapshot(snapshot => {
+            wishesInput(snapshot.docs);
         });
         // people.where('customid', '==', user.uid).orderBy('title').onSnapshot((snapshot) => {
         //     snapshot.docs.forEach(doc => {
