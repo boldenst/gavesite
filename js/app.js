@@ -49,8 +49,10 @@ auth.onAuthStateChanged(user => {
             data.forEach(doc => {
                 const presents = doc.data();
                 const li = `
-                <li data-id="${doc.id}" class="people-added-container">
-                    <div class="delete-item"></div>
+                <li class="people-added-container">
+                    <div data-id="${doc.id}" class="delete-person">
+                        <p>X</p>
+                    </div>
                     <h2 class="render-gift-title">${presents.title}</h2>
                     <div class="render-gift-container">
                         <div class="render-gift-price-container-column">
