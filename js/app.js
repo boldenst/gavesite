@@ -1,58 +1,5 @@
-let gifts = db.collection('gifts');
-
-// Creating elements for renderGifts
-function renderGifts(doc) {
-    let li = document.createElement('li');
-    let container = document.createElement('div');
-    container.classList.add('render-gift-container');
-    let title = document.createElement('h2');
-    title.classList.add('render-gift-title');
-    let elementContainer = document.createElement('div');
-    elementContainer.classList.add('render-gift-element-container');
-    let priceContainer = document.createElement('div');
-    priceContainer.classList.add('render-gift-price-container');
-    let priceContainerColumn = document.createElement('div');
-    priceContainerColumn.classList.add('render-gift-price-container-column')
-    let priceTitle = document.createElement('p');
-    let price = document.createElement('p');
-    let priceCurrency = document.createElement('p');
-    priceCurrency.classList.add('render-gift-price-currency')
-    let contentTitle = document.createElement('p');
-    let content = document.createElement('p');
-    let deleteItem = document.createElement('div');
-    deleteItem.classList.add('delete-item')
-
-    li.setAttribute('data-id', doc.id);
-    title.textContent = doc.data().title;
-    priceTitle.textContent = 'Pris:';
-    price.textContent = doc.data().price;
-    priceCurrency.textContent = 'kr.';
-    contentTitle.textContent = 'Note:';
-    content.textContent = doc.data().content;
-
-    li.appendChild(deleteItem);
-    li.appendChild(title);
-    li.appendChild(container);
-    container.appendChild(priceContainerColumn);
-    container.appendChild(elementContainer);
-    priceContainerColumn.appendChild(priceTitle)
-    priceContainerColumn.appendChild(priceContainer);
-    priceContainer.appendChild(price);
-    priceContainer.appendChild(priceCurrency);
-    elementContainer.appendChild(contentTitle);
-    elementContainer.appendChild(content);
-
-    giftList.appendChild(li);
-
-    //Deleting data
-    deleteItem.addEventListener('click', (e) => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('gifts').doc(id).delete().then(() => {
-            location.reload();
-        })
-    })
-}
+let presents = db.collection('gifts');
+const presentList = document.querySelector('.gifts');
 
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -76,37 +23,72 @@ auth.onAuthStateChanged(user => {
             </div>    
         </div>
         `;
-        accountDetails.innerHTML = html;    
-        });
-
-        //Get data for "Min ønskeliste"
-        gifts.where('customid', '==', user.uid).orderBy('title').onSnapshot((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                renderGifts(doc);
-            });
-            // settingsUI(user);
-        });
-
+        accountDetails.innerHTML = html;
+    });
         //Create new gift
-        const createForm = document.querySelector('#create-form');
-        createForm.addEventListener('submit', (e) => {
+        const presentForm = document.querySelector('#gift-form');
+        presentForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            gifts.add({
-                title: createForm.title.value,
-                price: createForm.price.value,
-                content: createForm.content.value,
-                customid: user.uid
+            presents.add({
+                title: presentForm.title.value,
+                customid: user.uid,
+                price: presentForm.price.value,
+                content: presentForm.content.value
             }).then(() => {
                 //Reset form
-                createForm.reset();
-                location.reload();
+                presentForm.reset();
+                // location.reload();
                 $('.pop-up__show').removeClass('pop-up__show');
             }).catch(err => {
                 console.log(err.message)
             });
         });
-    } else {
+
+        const presentInput = (data) => {
+            let html = '';
+            data.forEach(doc => {
+                const presents = doc.data();
+                const li = `
+                <li data-id="${doc.id}" class="people-added-container">
+                    <div class="delete-item"></div>
+                    <h2 class="render-gift-title">${presents.title}</h2>
+                    <div class="render-gift-container">
+                        <div class="render-gift-price-container-column">
+                            <p>Pris</p>
+                            <div class="render-gift-price-container">
+                                <p>${presents.price}</p>
+                                <p class="render-gift-price-currency">kr.</p>
+                            </div>
+                        </div>
+                        <div class="render-gift-element-container">
+                            <p>Note</p>
+                            <p>${presents.content}</p>
+                        </div>
+                    </div>
+                </li>
+            `;
+                html += li
+            });
+            presentList.innerHTML = html;
+        }
+
+        //Get data for "Min ønskeliste"
+        
+        presents.where('customid', '==', user.uid).orderBy('title').onSnapshot(snapshot => {
+            presentInput(snapshot.docs);
+        });
+
+        // settingsUI(user);
+        } else {
         window.location.href = "./index.html";
     }
 });
 
+//Deleting data
+presentList.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.getAttribute('data-id');
+    db.collection('gifts').doc(id).delete().then(() => {
+        // location.reload();
+    })
+})
