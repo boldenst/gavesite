@@ -115,3 +115,8 @@
         height: 70vh;
     }
 }
+
+.bottom-add_btn:hover {
+    transition: transform .5s ease-in-out;
+    transform: scale(1.1);
+}

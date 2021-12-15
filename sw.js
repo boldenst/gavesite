@@ -2,10 +2,26 @@ const staticCacheName = 'site-static-v1';
 const assets = [
   '/',
   '/index.html',
+  '/settings.html',
+  '/giftlist.html',
+  '/mywishlist.html',
+  '/js/firebase.js',
+  '/js/jquery-3.6.0.js',
+  '/js/app.js',
+  '/js/auth.js',
+  '/js/people.js',
+  '/js/main.js',
   '/assets/js/ui.js',
   '/css/style.css',
-  '/assets/images/background-home.jpg',
-  'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+  '/css/animation.css',
+  '/images/icons/logo.svg',
+  '/images/icons/user-icon.svg',
+  '/images/icons/settings-icon.svg',
+  '/images/wishlist-icon.svg',
+  '/images/wishlist-icon_active.svg',
+  '/images/people-icon.svg',
+  '/images/people-icon_active.svg',
+  'https://use.typekit.net/ral6jgm.css',
 ];
 // install event
 self.addEventListener('install', evt => {
