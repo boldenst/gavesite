@@ -96,7 +96,6 @@
     100% {
         opacity: 100%;
         transform: translateY(0px)
-
     }
 }
 
@@ -114,9 +113,4 @@
         transform: translateY(0px);
         height: 70vh;
     }
-}
-
-.bottom-add_btn:hover {
-    transition: transform .5s ease-in-out;
-    transform: scale(1.1);
 }

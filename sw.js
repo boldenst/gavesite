@@ -23,6 +23,7 @@ const assets = [
   '/images/people-icon_active.svg',
   'https://use.typekit.net/ral6jgm.css',
 ];
+
 // install event
 self.addEventListener('install', evt => {
   evt.waitUntil(
