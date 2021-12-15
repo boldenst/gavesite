@@ -24,36 +24,31 @@ const assets = [
   'https://use.typekit.net/ral6jgm.css',
 ];
 
-// sw.js
-self.addEventListener("fetch", event => {
-  console.log("You fetched " + event.url);
+// install event
+self.addEventListener('install', evt => {
+  evt.waitUntil(
+    caches.open(staticCacheName).then((cache) => {
+      console.log('caching shell assets');
+      cache.addAll(assets);
+    })
+  );
 });
-
-let cache_name = "Gavelisten"; // The string used to identify our cache
-self.addEventListener("install", event => {
-    console.log("installing...");
-    event.waitUntil(
-        caches
-            .open(cache_name)
-            .then(cache => {
-                return cache.addAll(assets);
-            })
-            .catch(err => console.log(err))
-    );
+// activate event
+self.addEventListener('activate', evt => {
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(keys
+        .filter(key => key !== staticCacheName)
+        .map(key => caches.delete(key))
+      );
+    })
+  );
 });
-self.addEventListener("fetch", event => {
-  if (event.request.url === "https://www.hjorthex.com/") {
-      // or whatever your app's URL is
-      event.respondWith(
-          fetch(event.request).catch(err =>
-              self.cache.open(cache_name).then(cache => cache.match("/offline.html"))
-          )
-      );
-  } else {
-      event.respondWith(
-          fetch(event.request).catch(err =>
-              caches.match(event.request).then(response => response)
-          )
-      );
-  }
+// fetch event
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request);
+    })
+  );
 });
