@@ -369,7 +369,7 @@ p {
 
 .giftlist-main {
     display: grid;
-    margin: 2rem 2rem 0 2rem;
+    margin: 5rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
@@ -377,18 +377,15 @@ p {
     ;
 }
 
-
-
 .giftlist-main ul {
     grid-area: list;
-    height: calc(100vh - 11rem);
     padding-bottom: 8rem;
-    margin-top: 3rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
 }
 
 .giftlist-main ul li {
@@ -457,12 +454,6 @@ p {
     left: calc(50% - 1.25);
 }
 
-.gifts {
-    margin-top: 10rem;
-    height: 35rem;
-    overflow-y: auto;
-}
-
 .gifts::-webkit-scrollbar {
     display: none;
 }
@@ -511,9 +502,10 @@ p {
 .people-added-img {
     width: 3rem;
     height: 3rem;
-    background-color: var(--color-secondary);
+    background-image: url(../images/icons/user-icon.svg);
     border-radius: 50%;
     margin-right: 1rem;
+    background-size: cover;
 }
 
 .delete-person {
