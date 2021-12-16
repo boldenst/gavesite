@@ -17,6 +17,7 @@ auth.onAuthStateChanged(user => {
                 //Reset form
                 peopleForm.reset();
                 // location.reload();
+                $('.pop-up__show--people').removeClass('pop-up__show--people');
                 $('.pop-up__show').removeClass('pop-up__show');
             }).catch(err => {
                 console.log(err.message)

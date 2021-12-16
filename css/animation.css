@@ -99,7 +99,7 @@
     }
 }
 
-.add-gift__popup {
+.add-gift__popup, .add-people__popup {
     animation-name: popup;
     animation: popup .5s forwards;
 }

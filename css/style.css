@@ -33,6 +33,18 @@
     text-decoration: none;
 }
 
+/* Make it single page with toggles */
+
+.content-hide {
+    display: none !important;
+}
+.content-show {
+    display: block !important;
+}
+
+/* General styling */
+
+
 body {
     width: 100vw;
     background-color: var(--main-ui-bg);
@@ -237,6 +249,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: none;
+    background-color: transparent;
 }
 
 .bottom-link_current {
@@ -323,7 +337,6 @@ p {
 
 }
 
-
 #logout {
     width: 16rem;
     height: 3rem;
@@ -342,7 +355,7 @@ p {
 }
 
 /* POP UP ADD PERSON */
-.add-gift__popup {
+.add-gift__popup, .add-people__popup {
     display: none;
     z-index: 11;
     bottom: 18vh;
@@ -354,7 +367,7 @@ p {
     background-color: var(--nav-background);
 }
 
-.add-gift__popup:before {
+.add-gift__popup:before, .add-people__popup:before {
     content: '';
     position: absolute;
     bottom: -1rem;
@@ -376,7 +389,7 @@ p {
     z-index: 10;
 }
 
-.pop-up__show {
+.pop-up__show--gifts, .pop-up__show--people, .pop-up__show {
     display: block;
 }
 
@@ -402,7 +415,7 @@ p {
     z-index: 5;
 }
 
-.giftlist-main {
+.giftlist-main, .peoplelist-main {
     display: grid;
     margin: 5rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
@@ -412,7 +425,7 @@ p {
     ;
 }
 
-.giftlist-main ul {
+.giftlist-main ul, .peoplelist-main ul {
     grid-area: list;
     padding-bottom: 8rem;
     width: 100%;
@@ -423,7 +436,7 @@ p {
     overflow-y: scroll;
 }
 
-.giftlist-main ul li {
+.giftlist-main ul li, .peoplelist-main ul li {
     margin: 1rem 0;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 10%);
     background-color: var(--main-ui-bg);

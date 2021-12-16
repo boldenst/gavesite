@@ -21,14 +21,34 @@ const settingsUI = (user) => {
     }
 };
 
-$(".bottom-add_btn").click(function(){
-    $(".add-gift__popup").toggleClass("pop-up__show");
+$(".bottom-add-gift_btn").click(function(){
+    $(".add-gift__popup").toggleClass("pop-up__show--gifts");
+    $(".backdrop").toggleClass("pop-up__show")
+});
+
+$(".bottom-add-people_btn").click(function(){
+    $(".add-people__popup").toggleClass("pop-up__show--people");
     $(".backdrop").toggleClass("pop-up__show")
 });
 
 $(".backdrop").click(function(){
-    $(".add-gift__popup").toggleClass("pop-up__show");
+    $(".add-gift__popup").removeClass("pop-up__show--gifts");
+    $(".add-people__popup").removeClass("pop-up__show--people");
     $(".backdrop").toggleClass("pop-up__show")
+});
+
+$(".bottom-link__wishlist").click(function(){
+    $(".bottom-add-gift_btn").removeClass("content-hide");
+    $(".bottom-add-people_btn").addClass("content-hide");
+    $(".people-added-container").addClass("content-hide");
+    $(".gifts-added-container").removeClass("content-hide");
+});
+
+$(".bottom-link__people").click(function(){
+    $(".bottom-add-gift_btn").addClass("content-hide");
+    $(".bottom-add-people_btn").removeClass("content-hide");
+    $(".people-added-container").removeClass("content-hide");
+    $(".gifts-added-container").addClass("content-hide");
 });
 
 if('serviceWorker' in navigator){

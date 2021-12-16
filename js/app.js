@@ -38,7 +38,9 @@ auth.onAuthStateChanged(user => {
                 //Reset form
                 presentForm.reset();
                 // location.reload();
+                $('.pop-up__show--gifts').removeClass('pop-up__show--gifts');
                 $('.pop-up__show').removeClass('pop-up__show');
+                $('.gifts-added-container').removeClass('content-hide');
             }).catch(err => {
                 console.log(err.message)
             });
@@ -49,7 +51,7 @@ auth.onAuthStateChanged(user => {
             data.forEach(doc => {
                 const presents = doc.data();
                 const li = `
-                <li class="people-added-container">
+                <li class="gifts-added-container content-hide">
                     <div data-id="${doc.id}" class="delete-person">
                         <div class="delete-person-icon"></div>
                     </div>
@@ -91,6 +93,6 @@ presentList.addEventListener('click', (e) => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute('data-id');
     db.collection('gifts').doc(id).delete().then(() => {
-        // location.reload();
+        $('.gifts-added-container').removeClass('content-hide')
     })
 })
