@@ -26,7 +26,7 @@ signupForm.addEventListener('submit', (e) => {
         });
     }).then(() => {
         signupForm.reset();
-        window.location.href = "./giftlist.html";
+        window.location.href = "./dashboard.html";
     });
 });
 
@@ -42,13 +42,6 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         // console.log(cred.user);
         loginForm.reset();
-        window.location.href = "./giftlist.html";
+        window.location.href = "./dashboard.html";
     });
-});
-
-// Logout method
-const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-    // e.preventDefault();
-    auth.signOut()
 });

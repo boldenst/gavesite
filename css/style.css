@@ -359,8 +359,10 @@ p {
 
 .account-details {
     grid-area: acc-detail;
+    margin-top: 1rem;
     width: 100%;
-    margin-top: 5rem;
+    height: 20rem;
+    border-bottom: solid .2rem black;
 }
 
 .account-details div { /* Give class in app.js */
@@ -390,7 +392,6 @@ p {
     width: 16rem;
     height: 3rem;
     border-radius: 2rem;
-    margin: .3rem 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -398,7 +399,7 @@ p {
     background-color: var(--color-red);
     box-shadow: 3px 3px 6px var(--color-black-light);
     position: absolute;
-    bottom: 2rem;
+    bottom: 5rem;
     color: var(--main-ui-bg);
     left: calc(50% - 8rem);
 }

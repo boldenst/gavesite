@@ -39,6 +39,8 @@ $(".bottom-link__wishlist").click(function(){
     $(".bottom-link__wishlist").addClass("wishlist-icon-active");
     $(".bottom-link__people").removeClass("people-icon-active");
     $(".gifts-added-container").removeClass("content-hide");
+    $(".wishlist-heading").removeClass("content-hide");
+    $(".people-heading").addClass("content-hide");
 });
 
 $(".bottom-link__people").click(function(){
@@ -48,6 +50,8 @@ $(".bottom-link__people").click(function(){
     $(".bottom-link__people").addClass("people-icon-active");
     $(".bottom-link__wishlist").removeClass("wishlist-icon-active");
     $(".gifts-added-container").addClass("content-hide");
+    $(".people-heading").removeClass("content-hide");
+    $(".wishlist-heading").addClass("content-hide");
 });
 
 $(".settings-open").click(function(){

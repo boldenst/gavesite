@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="./css/animation.css">
     <title>Min ønskeliste</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1013685091520454"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="giftlist-header">
-        <h2>Min ønskeliste</h2>
+        <h2 class="people-heading">Gaver til andre</h2>
+        <h2 class="wishlist-heading content-hide">Min ønskeliste</h2>
         <button class="settings-open"></button>
     </header>
 
@@ -71,6 +72,14 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="./js/firebase.js"></script>
+    <script>
+        // Logout method
+        const logout = document.querySelector('#logout');
+        logout.addEventListener('click', (e) => {
+            // e.preventDefault();
+            auth.signOut()
+        });
+    </script>
     <script src="./js/auth.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/people.js"></script>
