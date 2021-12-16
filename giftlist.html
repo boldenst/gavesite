@@ -14,8 +14,9 @@
 </head>
 
 <body>
+
     <header class="giftlist-header">
-        <h2>Gaver til andre</h2>
+        <h2>Gaver til andre</h2>    <button>Add new person</button>
         <a class="settings-open" href="./settings.html"></a>
     </header>
     <main class="giftlist-main">
@@ -35,6 +36,14 @@
         <button class="bottom-add_btn">+</button>
         <a class="bottom-link_btn" href="./mywishlist.html"> <img src="./images/wishlist-icon.svg" alt=""> Ønskeliste</a>
     </nav>
+
+    <div class="sidenav">
+        <a class="logo-nav" href="#gavelisten"><img class="logo-icon" src="images/icons/logo.svg">  Gavelisten</a>
+        <a class="active-link" href="#personer"><img class="nav-icon" src="images/icons/people-icon-active.png">Personer</a>
+        <a href="#oenskeliste"><img class="nav-icon" src="images/icons/wishlist-icon.png">  Ønskeliste</a>
+        <a href="#indstillinger"><img class="settings-icon" src="images/icons/settings-icon.png"> Indstillinger</a>
+    </div>
+      
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
