@@ -219,7 +219,8 @@ p {
     width: 5rem;
     height: 5rem;
     font-size: 3rem;
-    background-color: var(--color-primary);
+    background-image: url(../assets/icons/add-item-icon.svg);
+    background-size: cover;
     border: none;
     color: White;
     margin-top: -2.5rem;
@@ -231,7 +232,11 @@ p {
     text-align: center;
     height: 5rem;
     padding-top: 0.5rem;
+    font: var(--p-font);
     color: var(--color-black-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bottom-link_current {
@@ -248,6 +253,15 @@ p {
     display: none;
 }
 
+.bottomnav-mobile-icon-wishlist, .bottomnav-mobile-icon-people {
+    width: 1.7rem;
+    margin: .3rem 0 0 0;
+}
+
+.bottomnav-mobile-icon-people {
+    width: 2.2rem;
+}
+
 /* Settings */
 
 .settings-open, .settings-close {
@@ -255,7 +269,7 @@ p {
     height: 3.5rem;
     border-radius: 50%;
     background-color: var(--color-primary);
-    box-shadow: 3px 3px 6px var(--color-black-light);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 20%);
     background-image: url(/images/icons/settings-icon.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -263,7 +277,9 @@ p {
 
 .settings-close {
     background-color: var(--color-red);
-    background-image: url(/images/icons/settings-icon.png);
+    background-image: url(../assets/icons/settings-icon-close.svg);
+    background-size: 100%;
+    background-color: var(--main-ui-bg);
 }
 
 .settings-container-userinfo {
@@ -328,10 +344,11 @@ p {
 /* POP UP ADD PERSON */
 .add-gift__popup {
     display: none;
-    z-index: 10;
+    z-index: 11;
     bottom: 18vh;
     left: 10vw;
     position: fixed;
+    border-radius: 10px;
     width: 80vw;
     height: 70vh;
     background-color: var(--nav-background);
@@ -348,8 +365,25 @@ p {
     transform: rotate(45deg);
 }
 
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 50%);
+    z-index: 10;
+}
+
 .pop-up__show {
     display: block;
+}
+
+.checkmark {
+    background-image: url(../assets/icons/add-item-checkmark.svg);
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /* Giftlist */
@@ -395,6 +429,7 @@ p {
     background-color: var(--main-ui-bg);
     padding: 1rem;
     width: 16rem;
+    border-radius: 10px;
 }
 
 #people-form, #gift-form {
@@ -442,7 +477,8 @@ p {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background-color:var(--color-primary);
+    background-image: url(../assets/icons/add-item-checkmark.svg);
+    background-size: cover;
     border: none;
     color: var(--main-ui-bg);
     display: flex;
@@ -513,15 +549,19 @@ p {
     width: 2rem;
     height: 2rem;
     position: relative;
-    left: 14rem;
+    left: 14.5rem;
+    top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.delete-person p {
-    color: var(--color-red);
-    font-weight: bold;
+.delete-person-icon {
+    background-image: url(../assets/icons/close-icon.svg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
 }
 
 .people-added-add-info {

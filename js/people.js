@@ -30,7 +30,7 @@ auth.onAuthStateChanged(user => {
                 const li = `
                     <li class="people-added-container">
                         <div data-id="${doc.id}" class="delete-person">
-                        <p>X</p>
+                            <div class="delete-person-icon"></div>
                         </div>    
                         <div class="people-added-content-container">    
                             <div class="people-added-img"></div>

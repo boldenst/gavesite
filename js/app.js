@@ -51,7 +51,7 @@ auth.onAuthStateChanged(user => {
                 const li = `
                 <li class="people-added-container">
                     <div data-id="${doc.id}" class="delete-person">
-                        <p>X</p>
+                        <div class="delete-person-icon"></div>
                     </div>
                     <h2 class="render-gift-title">${presents.title}</h2>
                     <div class="render-gift-container">

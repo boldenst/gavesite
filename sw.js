@@ -21,7 +21,7 @@ const assets = [
   '/images/wishlist-icon_active.svg',
   '/images/people-icon.svg',
   '/images/people-icon_active.svg',
-  'https://use.typekit.net/ral6jgm.css',
+  'https://use.typekit.net/ral6jgm.css'
 ];
 
 // install event

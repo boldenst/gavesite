@@ -23,6 +23,12 @@ const settingsUI = (user) => {
 
 $(".bottom-add_btn").click(function(){
     $(".add-gift__popup").toggleClass("pop-up__show");
+    $(".backdrop").toggleClass("pop-up__show")
+});
+
+$(".backdrop").click(function(){
+    $(".add-gift__popup").toggleClass("pop-up__show");
+    $(".backdrop").toggleClass("pop-up__show")
 });
 
 if('serviceWorker' in navigator){

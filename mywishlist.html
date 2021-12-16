@@ -36,20 +36,14 @@
                 <label for="title">Indhold</label>
                 <textarea id="content" name="content" required></textarea>
             </div>
-            <button onclick="submit">+</button>
+            <button onclick="submit"></button>
         </form>
     </div>
+    <div class="backdrop"></div>
     <nav class="bottomnav-mobile">
-        <a class="bottom-link_btn" href="./giftlist.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28.312"
-                height="28.406" viewBox="0 0 28.312 28.406">
-                <path id="Path_779" data-name="Path 779"
-                    d="M16.156,4.979a5.847,5.847,0,1,1,0,7.736m4.385,16.6H3V27.851a8.771,8.771,0,1,1,17.542,0Zm0,0h8.771V27.851a8.771,8.771,0,0,0-13.156-7.6M17.618,8.847A5.847,5.847,0,1,1,11.771,3,5.847,5.847,0,0,1,17.618,8.847Z"
-                    transform="translate(-2 -1.906)" fill="none" stroke="#bcbcbc" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" />
-            </svg>Gaver</a>
-        <button class="bottom-add_btn">+</button>
-        <a class="bottom-link_btn bottom-link_current" href="#"> <img src="./images/wishlist-icon_active.svg" alt=""> Ønskeliste</a>
+        <a class="bottom-link_btn" href="./giftlist.html"> <img class="bottomnav-mobile-icon-people" src="./assets/icons/people-icon.svg" alt=""> Personer</a>
+        <button class="bottom-add_btn"></button>
+        <a class="bottom-link_btn" href="#"> <img class="bottomnav-mobile-icon-wishlist" src="./assets/icons/wishlist-icon-focused.svg" alt=""> Ønskeliste</a>
     </nav>
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
