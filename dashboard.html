@@ -16,9 +16,19 @@
 <body>
     <header class="giftlist-header">
         <h2>Min ønskeliste</h2>
-        <a class="settings-open" href="./settings.html"></a>
+        <button class="settings-open"></button>
     </header>
-    <a class="settings-open" href="./settings.html"></a>
+
+    <main class="settings-container">
+        <h2>Indstillinger</h2>
+        <button class="settings-close"></button>
+        <div class="settings-container-userinfo">
+            <div class="account-details"></div>
+            <h2>Temaer</h2>
+        </div>
+        <a class="text" id="logout" href="./index.html">Log ud</a>
+    </main>
+
     <main class="peoplelist-main">
         <ul class="people"></ul>
         <ul class="gifts"></ul>
@@ -51,10 +61,10 @@
     </div>
     <div class="backdrop"></div>
     <nav class="bottomnav-mobile">
-        <button class="bottom-link_btn bottom-link__people"> <img class="bottomnav-mobile-icon-people" src="./assets/icons/people-icon-focused.svg" alt=""> Personer</button>
+        <button class="bottom-link_btn bottom-link__people people-icon-active">Personer</button>
         <button class="bottom-add_btn bottom-add-people_btn"></button>
         <button class="bottom-add_btn bottom-add-gift_btn content-hide"></button>
-        <button class="bottom-link_btn bottom-link__wishlist"> <img class="bottomnav-mobile-icon-wishlist" src="./assets/icons/wishlist-icon.svg" alt=""> Ønskeliste</button>
+        <button class="bottom-link_btn bottom-link__wishlist">Ønskeliste</button>
     </nav>
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>

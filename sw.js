@@ -3,6 +3,7 @@ const assets = [
   '/',
   '/index.html',
   '/settings.html',
+  '/dashboard.html',
   '/giftlist.html',
   '/mywishlist.html',
   '/js/firebase.js',

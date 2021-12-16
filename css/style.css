@@ -240,10 +240,12 @@ p {
 }
 
 .bottom-link_btn {
-    width: 4rem;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    margin-top: .4rem;
+    width: 2.7rem;
     text-align: center;
-    height: 5rem;
-    padding-top: 0.5rem;
+    height: 4rem;
     font: var(--p-font);
     color: var(--color-black-light);
     display: flex;
@@ -251,7 +253,31 @@ p {
     align-items: center;
     border: none;
     background-color: transparent;
+    justify-content: flex-end;
+    padding-bottom: .2rem;
 }
+
+.bottom-link__wishlist {
+    background-image: url(../assets/icons/wishlist-icon.svg);
+    background-position: 50% 0;
+    background-size: 70%;
+}
+
+.bottom-link__people {
+    background-image: url(../assets/icons/people-icon.svg);
+}
+
+.wishlist-icon-active {
+    background-image: url(../assets/icons/wishlist-icon-focused.svg);
+    color: var(--color-primary);
+}
+
+.people-icon-active {
+    background-image: url(../assets/icons/people-icon-focused.svg);
+    color: var(--color-primary);
+}
+
+
 
 .bottom-link_current {
     border-top: 3px solid var(--color-primary);
@@ -267,33 +293,56 @@ p {
     display: none;
 }
 
-.bottomnav-mobile-icon-wishlist, .bottomnav-mobile-icon-people {
-    width: 1.7rem;
-    margin: .3rem 0 0 0;
-}
 
-.bottomnav-mobile-icon-people {
-    width: 2.2rem;
-}
+
+
 
 /* Settings */
 
 .settings-open, .settings-close {
     width: 3.5rem;
     height: 3.5rem;
+    border: none;
     border-radius: 50%;
     background-color: var(--color-primary);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 20%);
-    background-image: url(/images/icons/settings-icon.png);
     background-repeat: no-repeat;
     background-position: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 15;
+}
+
+.settings-open {
+    background-image: url(/images/icons/settings-icon.png);
 }
 
 .settings-close {
-    background-color: var(--color-red);
     background-image: url(../assets/icons/settings-icon-close.svg);
     background-size: 100%;
     background-color: var(--main-ui-bg);
+}
+
+.settings-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 100vw;
+    top: 0;
+    z-index: 15;
+    background-color: var(--main-ui-bg);
+    transition: .5s;
+}
+
+.settings-container-open {
+    left: 0;
+    transition: .5s;
+}
+
+.settings-container h2 {
+    margin-left: 1.8rem;
+    margin-top: 2rem;
 }
 
 .settings-container-userinfo {
