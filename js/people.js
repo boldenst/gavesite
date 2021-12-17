@@ -37,7 +37,12 @@ auth.onAuthStateChanged(user => {
                             <div class="people-added-img"></div>
                             <h2>${people.title}</h2>
                         </div>
-                        <button class="people-added-add-info">+</button>
+                        <details>
+                        <summary class="people-added-add-info">+</summary>
+                        <p>Coming soon</p>
+                        </details>
+                        
+                        </details>
                     </li>
                 `;
                 html += li
@@ -56,11 +61,11 @@ auth.onAuthStateChanged(user => {
     }
 });
 
-            //Deleting data
-            peopleList.addEventListener('click', (e) => {
-                e.stopPropagation();
-                let id = e.target.parentElement.getAttribute('data-id');
-                db.collection('people').doc(id).delete().then(() => {
-                    // location.reload();
-                });
-            });
+//Deleting data
+peopleList.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.getAttribute('data-id');
+    db.collection('people').doc(id).delete().then(() => {
+        // location.reload();
+    });
+});

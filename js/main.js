@@ -54,6 +54,10 @@ $(".bottom-link__people").click(function(){
     $(".wishlist-heading").addClass("content-hide");
 });
 
+$(".test-pop").click(function(){
+    $(".coming-soon").toggleClass("coming-soon--show");
+});
+
 $(".settings-open").click(function(){
     $(".settings-container").addClass("settings-container-open");
 });
@@ -61,6 +65,7 @@ $(".settings-open").click(function(){
 $(".settings-close").click(function(){
     $(".settings-container").removeClass("settings-container-open");
 });
+
 
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('../sw.js')
