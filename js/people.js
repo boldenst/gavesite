@@ -38,7 +38,7 @@ auth.onAuthStateChanged(user => {
                             <h2>${people.title}</h2>
                         </div>
                         <details>
-                        <summary class="people-added-add-info">+</summary>
+                        <summary class="people-added-add-info"></summary>
                         <p>Coming soon</p>
                         </details>
                         

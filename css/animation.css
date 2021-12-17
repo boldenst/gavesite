@@ -107,10 +107,10 @@
 @keyframes popup {
     0% {
         transform: translateY(10px);
-        height: 60vh;
+        height: 20rem;
     }
     100% {
         transform: translateY(0px);
-        height: 70vh;
+        height: 25rem;
     }
 }

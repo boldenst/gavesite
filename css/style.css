@@ -408,16 +408,15 @@ p {
 .add-gift__popup, .add-people__popup {
     display: none;
     z-index: 11;
-    bottom: 18vh;
+    top: 5vh;
     left: 10vw;
     position: fixed;
     border-radius: 10px;
     width: 80vw;
-    height: 70vh;
     background-color: var(--nav-background);
 }
 
-.add-gift__popup:before, .add-people__popup:before {
+/* .add-gift__popup:before, .add-people__popup:before {
     content: '';
     position: absolute;
     bottom: -1rem;
@@ -426,7 +425,7 @@ p {
     height: 2rem;
     background-color: var(--nav-background);
     transform: rotate(45deg);
-}
+} */
 
 .backdrop {
     display: none;
@@ -496,7 +495,7 @@ p {
 }
 
 #people-form, #gift-form {
-    margin: 2rem 2rem 0 2rem;
+    margin: 0rem 2rem 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -664,7 +663,8 @@ details p:before {
     height: 2rem;
     border: none;
     border-radius: 50%;
-    background-color: var(--color-primary);
+    background-image: url(../assets/icons/add-item-icon.svg);
+    background-size: cover;
     color: var(--main-ui-bg);
     font-size: 1.5rem;
     margin-left: calc(50% - 1rem);
@@ -676,3 +676,7 @@ details p:before {
     justify-content: center;
     align-items: center;
 }
+
+details summary::-webkit-details-marker {
+    display:none;
+  }
