@@ -99,7 +99,7 @@
     }
 }
 
-.add-gift__popup {
+.add-gift__popup, .add-people__popup {
     animation-name: popup;
     animation: popup .5s forwards;
 }
@@ -107,10 +107,10 @@
 @keyframes popup {
     0% {
         transform: translateY(10px);
-        height: 60vh;
+        height: 20rem;
     }
     100% {
         transform: translateY(0px);
-        height: 70vh;
+        height: 25rem;
     }
 }

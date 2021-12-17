@@ -1,10 +1,14 @@
 const staticCacheName = 'site-static-v1';
 const assets = [
+  // Pages
   '/',
   '/index.html',
   '/settings.html',
+  '/dashboard.html',
   '/giftlist.html',
   '/mywishlist.html',
+
+  //Javascript
   '/js/firebase.js',
   '/js/jquery-3.6.0.js',
   '/js/app.js',
@@ -12,8 +16,25 @@ const assets = [
   '/js/people.js',
   '/js/main.js',
   '/assets/js/ui.js',
+
+  //CSS
   '/css/style.css',
   '/css/animation.css',
+
+  //Images + Icons
+  '/images/icons/add-item-checkmark.svg',
+  '/images/icons/add-item-icon.svg',
+  '/images/icons/close-icon.svg',
+  '/images/icons/edit-icon.svg',
+  '/images/icons/edit-item-green.svg',
+  '/images/icons/people-icon-focused.svg',
+  '/images/icons/people-icon.svg',
+  '/images/icons/people-iconhover.svg',
+  '/images/icons/settings-icon-close.svg',
+  '/images/icons/settings-icon-close.svg',
+  '/images/icons/wishlist-icon-focused.svg',
+  '/images/icons/wishlist-icon-hover.svg',
+  '/images/icons/wishlist-icon.svg',
   '/images/icons/logo.svg',
   '/images/icons/user-icon.svg',
   '/images/icons/settings-icon.svg',
@@ -21,7 +42,7 @@ const assets = [
   '/images/wishlist-icon_active.svg',
   '/images/people-icon.svg',
   '/images/people-icon_active.svg',
-  'https://use.typekit.net/ral6jgm.css',
+  'https://use.typekit.net/ral6jgm.css'
 ];
 
 // install event

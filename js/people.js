@@ -17,6 +17,7 @@ auth.onAuthStateChanged(user => {
                 //Reset form
                 peopleForm.reset();
                 // location.reload();
+                $('.pop-up__show--people').removeClass('pop-up__show--people');
                 $('.pop-up__show').removeClass('pop-up__show');
             }).catch(err => {
                 console.log(err.message)
@@ -30,13 +31,18 @@ auth.onAuthStateChanged(user => {
                 const li = `
                     <li class="people-added-container">
                         <div data-id="${doc.id}" class="delete-person">
-                        <p>X</p>
+                            <div class="delete-person-icon"></div>
                         </div>    
                         <div class="people-added-content-container">    
                             <div class="people-added-img"></div>
                             <h2>${people.title}</h2>
                         </div>
-                        <button class="people-added-add-info">+</button>
+                        <details>
+                        <summary class="people-added-add-info"></summary>
+                        <p>Coming soon</p>
+                        </details>
+                        
+                        </details>
                     </li>
                 `;
                 html += li
@@ -55,11 +61,11 @@ auth.onAuthStateChanged(user => {
     }
 });
 
-            //Deleting data
-            peopleList.addEventListener('click', (e) => {
-                e.stopPropagation();
-                let id = e.target.parentElement.getAttribute('data-id');
-                db.collection('people').doc(id).delete().then(() => {
-                    // location.reload();
-                });
-            });
+//Deleting data
+peopleList.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.getAttribute('data-id');
+    db.collection('people').doc(id).delete().then(() => {
+        // location.reload();
+    });
+});
