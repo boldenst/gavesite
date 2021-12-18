@@ -15,13 +15,11 @@ auth.onAuthStateChanged(user => {
                 <div class="change-info change-username"</div>
             </div>
         </div>
-        <div>
             <p>Email:</p>
             <div>
                 <p> ${user.email}</p>
                 <div class="change-info change-email"></div>
             </div>    
-        </div>
         `;
         accountDetails.innerHTML = html;
     });

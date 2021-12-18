@@ -369,6 +369,7 @@ p {
     font: var(--p-font);
     color: var(--p-font-color);
     margin: 1rem 0;
+
 }
 
 .settings-container-userinfo h1 {
@@ -384,8 +385,16 @@ p {
 .change-info {
     width: 1.5rem;
     height: 1.5rem;
-    border: solid .2rem var(--color-primary);
+    background-image: url(../assets/icons/edit-item-green.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
+.account-details div div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
 }
 
 #logout {
@@ -461,6 +470,7 @@ p {
     width: calc(100vw - 4rem);
     padding: 0 2rem;
     z-index: 5;
+    background-color: var(--main-ui-bg);
 }
 
 .giftlist-main, .peoplelist-main {
@@ -679,10 +689,6 @@ details p:before {
 details summary::-webkit-details-marker {
     display:none;
   }
-    margin-top: 1rem;
-}
-
-
 
 /* SIDENAV */
 .sidenav {
