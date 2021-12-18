@@ -114,3 +114,31 @@
         height: 25rem;
     }
 }
+
+.people-out {
+    animation-name: people-out;
+    animation: people-out .5s ease;
+}
+
+@keyframes people-out {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+.gifts-out {
+    animation-name: gifts-out;
+    animation: gifts-out .5s ease;
+}
+
+@keyframes gifts-out {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}

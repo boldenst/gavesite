@@ -32,26 +32,44 @@ $(".backdrop").click(function(){
     $(".backdrop").toggleClass("pop-up__show")
 });
 
+
 $(".bottom-link__wishlist").click(function(){
-    $(".bottom-add-gift_btn").removeClass("content-hide");
-    $(".bottom-add-people_btn").addClass("content-hide");
-    $(".people-added-container").addClass("content-hide");
+    $(".people").addClass("people-out");
+});
+
+$(".bottom-link__wishlist").click(function(){
+    $(".people").addClass("people-out");
     $(".bottom-link__wishlist").addClass("wishlist-icon-active");
     $(".bottom-link__people").removeClass("people-icon-active");
-    $(".gifts-added-container").removeClass("content-hide");
-    $(".wishlist-heading").removeClass("content-hide");
-    $(".people-heading").addClass("content-hide");
+    setTimeout (
+        function() {
+            $(".people").addClass("people-out");
+            $(".bottom-add-gift_btn").removeClass("content-hide");
+            $(".people-added-container").addClass("content-hide");
+            $(".bottom-add-people_btn").addClass("content-hide");
+            $(".gifts-added-container").removeClass("content-hide");
+            $(".wishlist-heading").removeClass("content-hide");
+            $(".people-heading").addClass("content-hide");
+            $(".people").removeClass("people-out");
+        }, 500
+    );
 });
 
 $(".bottom-link__people").click(function(){
-    $(".bottom-add-gift_btn").addClass("content-hide");
-    $(".bottom-add-people_btn").removeClass("content-hide");
-    $(".people-added-container").removeClass("content-hide");
+    $(".gifts").addClass("gifts-out");
     $(".bottom-link__people").addClass("people-icon-active");
     $(".bottom-link__wishlist").removeClass("wishlist-icon-active");
-    $(".gifts-added-container").addClass("content-hide");
-    $(".people-heading").removeClass("content-hide");
-    $(".wishlist-heading").addClass("content-hide");
+    setTimeout (
+        function() {
+            $(".bottom-add-people_btn").removeClass("content-hide");
+            $(".bottom-add-gift_btn").addClass("content-hide");
+            $(".people-added-container").removeClass("content-hide");
+            $(".gifts-added-container").addClass("content-hide");
+            $(".people-heading").removeClass("content-hide");
+            $(".wishlist-heading").addClass("content-hide");
+            $(".gifts").removeClass("gifts-out");
+        }, 500
+    );
 });
 
 $(".test-pop").click(function(){
