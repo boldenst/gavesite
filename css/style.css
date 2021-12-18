@@ -312,6 +312,7 @@ p {
 .settings-open {
     background-image: url(../assets/icons/settings-icon-green-outline.svg);
     background-size: 90%;
+    background-color: var(--main-ui-bg);
 }
 
 .settings-close {
