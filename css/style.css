@@ -380,7 +380,6 @@ p {
     font: var(--p-font);
     color: var(--p-font-color);
     margin: 1rem 0;
-
 }
 
 .settings-container-userinfo h1 {
