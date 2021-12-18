@@ -1013,6 +1013,7 @@ tr td:nth-child(2) {
     position: static;
     max-width: 700px;
     margin: 0 auto;
+    padding: 0;
 }
 
 .peoplelist-main {
