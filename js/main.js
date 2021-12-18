@@ -72,6 +72,54 @@ $(".bottom-link__people").click(function(){
     );
 });
 
+$(".side-link__wishes").click(function(){
+    $(".side-link__wishes").addClass("side-link__wishes--active");
+    $(".side-link__people").removeClass("side-link__people--active");
+    $(".side-link__settings").removeClass("side-link__settings--active");
+    $(".bottom-add-people_btn").addClass("content-hide");
+    $(".bottom-add-gift_btn").removeClass("content-hide");
+
+    $(".people-added-container").addClass("content-hide");
+    $(".gifts-added-container").removeClass("content-hide");
+    $(".wishlist-heading").removeClass("content-hide");
+    $(".people-heading").addClass("content-hide");
+    $(".settings-heading").addClass("content-hide");
+    $(".settings-container").removeClass("settings-container-open");
+
+});
+
+$(".side-link__people").click(function(){
+    $(".side-link__people").addClass("side-link__people--active");
+    $(".side-link__wishes").removeClass("side-link__wishes--active");
+    $(".side-link__settings").removeClass("side-link__settings--active");
+    $(".bottom-add-people_btn").removeClass("content-hide");
+    $(".bottom-add-gift_btn").addClass("content-hide");
+
+    $(".gifts-added-container").addClass("content-hide");
+    $(".people-added-container").removeClass("content-hide");
+    $(".wishlist-heading").addClass("content-hide");
+    $(".people-heading").removeClass("content-hide");
+    $(".settings-heading").addClass("content-hide");
+    $(".settings-container").removeClass("settings-container-open");
+
+});
+
+$(".side-link__settings").click(function(){
+    $(".side-link__people").removeClass("side-link__people--active");
+    $(".side-link__wishes").removeClass("side-link__wishes--active");
+    $(".side-link__settings").addClass("side-link__settings--active");
+    $(".bottom-add-people_btn").addClass("content-hide");
+    $(".bottom-add-gift_btn").addClass("content-hide");
+
+
+    $(".gifts-added-container").addClass("content-hide");
+    $(".people-added-container").addClass("content-hide");
+    $(".wishlist-heading").addClass("content-hide");
+    $(".people-heading").addClass("content-hide");
+    $(".settings-heading").removeClass("content-hide");
+    $(".settings-container").addClass("settings-container-open");
+});
+
 $(".test-pop").click(function(){
     $(".coming-soon").toggleClass("coming-soon--show");
 });
