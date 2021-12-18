@@ -293,10 +293,6 @@ p {
     display: none;
 }
 
-
-
-
-
 /* Settings */
 
 .settings-open, .settings-close {
@@ -304,7 +300,6 @@ p {
     height: 3.5rem;
     border: none;
     border-radius: 50%;
-    background-color: var(--color-primary);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 20%);
     background-repeat: no-repeat;
     background-position: center;
@@ -315,7 +310,8 @@ p {
 }
 
 .settings-open {
-    background-image: url(/images/icons/settings-icon.png);
+    background-image: url(../assets/icons/settings-icon-green-outline.svg);
+    background-size: 90%;
 }
 
 .settings-close {
@@ -701,7 +697,7 @@ details p:before {
     border-left: solid .5rem transparent;
     transform: rotate(135deg);
     position: relative;
-    left: calc(50% - 1.4rem);
+    left: calc(50% - 1rem);
     top: 1.25rem ;
 }
 
