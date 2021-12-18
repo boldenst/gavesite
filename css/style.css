@@ -161,9 +161,13 @@ p {
     grid-area: form;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 10rem;
     width: 100%;
     align-items: center;
+}
+
+#login-form {
+    margin-top: 0rem;
 }
 
 .auth-form h1 {
@@ -173,6 +177,14 @@ p {
 .auth-form h2 {
     font: var(--h2-font);
     color: var(--h2-font-color);
+    font-size: 2.5em;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.auth-form p a {
+    color: var(--color-primary);
 }
 
 .auth-form input {
@@ -343,6 +355,7 @@ p {
 }
 
 .settings-container-userinfo {
+    border-bottom: solid .15rem var(--color-black-light);
     display: grid;
     margin: 2rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
@@ -350,6 +363,7 @@ p {
     grid-template-areas: 
     'heading heading heading heading'
     'acc-detail acc-detail acc-detail acc-detail'
+    'c-pass c-pass c-pass c-pass'
     'theme theme theme theme'
     ;
 }
@@ -358,8 +372,8 @@ p {
     grid-area: acc-detail;
     margin-top: 1rem;
     width: 100%;
-    height: 15rem;
-    border-bottom: solid .2rem black;
+    height: 12rem;
+    margin-bottom: 1rem;
 }
 
 .account-details div { /* Give class in app.js */
@@ -373,9 +387,24 @@ p {
     grid-area: heading;
 }
 
+.settings-change-password {
+    grid-area: c-pass;
+    width: 16rem;
+    height: 3rem;
+    margin: 0rem auto 2rem auto;
+    font: var(--p-font);
+    color: var(--main-ui-bg);
+    border: none;
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+}
+
 .settings-themes {
     grid-area: theme;
-    text-align: center;
 }
 
 .settings-themes-table:before {
@@ -386,7 +415,7 @@ p {
     font: var(--h2-font);
     color: var(--main-ui-bg);
     position: absolute;
-    bottom: 15rem;
+    bottom: 12rem;
     left: 2rem;
     width: calc(100vw - 4rem);
     height: 10rem;
@@ -396,12 +425,12 @@ p {
 }
 
 .settings-themes h2 {
-    margin: 0 auto;
     margin-top: 1rem;
 }
 
 .settings-themes-table {
-    margin-top: 2rem;
+    margin: 2rem auto 0rem auto;
+    width: calc(100vw - 4rem);
 }
 
 .settings-themes-table tr {
@@ -415,6 +444,10 @@ p {
 
 .settings-themes-colgroup {
     width: 100vw;
+}
+
+.settings-themes-col--rev {
+    display: flex;
 }
 
 .change-info {
@@ -459,17 +492,6 @@ p {
     width: 80vw;
     background-color: var(--nav-background);
 }
-
-/* .add-gift__popup:before, .add-people__popup:before {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: calc(50% - 1rem);
-    width: 2rem;
-    height: 2rem;
-    background-color: var(--nav-background);
-    transform: rotate(45deg);
-} */
 
 .backdrop {
     display: none;
@@ -551,6 +573,11 @@ p {
     flex-direction: column;
 }
 
+.input-field h2 {
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
 .input-field label {
     font: var(--p-font);
     color: var(--p-font-color);
@@ -560,14 +587,14 @@ p {
 .input-field input {
     padding: 0 .5rem 0 0;
     border: none;
-    border-bottom: solid .15rem var(--color-black);
+    border-bottom: solid .15rem var(--color-secondary);
     height: 2rem;
 }
 
 .input-field textarea {
     padding: 0 .5rem 0 0;
     border: none;
-    border-bottom: solid .15rem var(--color-black);
+    border-bottom: solid .15rem var(--color-secondary);
     resize: vertical;
     height: 2rem;
     font: var(--p-small-font);
