@@ -17,11 +17,14 @@
     <header class="giftlist-header">
         <h2 class="people-heading">Gaver til andre</h2>
         <h2 class="wishlist-heading content-hide">Min ønskeliste</h2>
+        <h2 class="settings-heading content-hide">Indstillinger</h2>
+        <button class="top-add-btn bottom-add-people_btn"></button>
+        <button class="top-add-btn bottom-add-gift_btn content-hide"></button>
         <button class="settings-open"></button>
     </header>
 
     <main class="settings-container">
-        <h2>Indstillinger</h2>
+        <h2 class="settings-overlay-heading">Indstillinger</h2>
         <button class="settings-close"></button>
         <div class="settings-container-userinfo">
             <div class="account-details"></div>
@@ -48,7 +51,7 @@
                 </tr>
               </table>
         </section>
-        <a class="text" id="logout" href="./index.html">Log ud</a>
+        <a class="text logout" id="logout" href="./index.html">Log ud</a>
     </main>
 
     <main class="peoplelist-main">
@@ -90,12 +93,25 @@
         <button class="bottom-add_btn bottom-add-gift_btn content-hide"></button>
         <button class="bottom-link_btn bottom-link__wishlist">Ønskeliste</button>
     </nav>
+    <nav class="sidenav">
+        <div>
+            <a class="logo-nav"><img class="logo-icon" src="./images/icons/logo.svg">  Gavelisten</a>
+            <button class="side-link side-link__people side-link__people--active">Personer</button>
+            <button class="side-link side-link__wishes">Ønskeliste</button>
+        </div>
+        
+        <div class="sidenav-settings-container">
+            <button class="side-link side-link__settings">Indstillinger</button>
+            <a class="text logout-nav" id="logout" href="./index.html">Log ud</a>
+        </div>
+    </nav>
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/firebase.js"></script>
+    <script src="./js/auth.js"></script>
     <script>
         // Logout method
         const logout = document.querySelector('#logout');
@@ -104,7 +120,6 @@
             auth.signOut()
         });
     </script>
-    <script src="./js/auth.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/people.js"></script>
     <script src="./js/main.js"></script>

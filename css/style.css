@@ -35,6 +35,10 @@
 
 /* Make it single page with toggles */
 
+.top-add-btn {
+    display: none;
+}
+
 .content-hide {
     display: none !important;
 }
@@ -464,7 +468,7 @@ p {
     height: 2rem;
 }
 
-#logout {
+.logout {
     width: 16rem;
     height: 3rem;
     border-radius: 2rem;
@@ -754,7 +758,31 @@ details summary::-webkit-details-marker {
 
 /* SIDENAV */
 .sidenav {
-    height: 100%;
+    display: none;
+  }
+  
+/* TABLETS */
+@media only screen and (min-width: 481px) {
+   /*Login and Signup page*/
+    .auth-container {
+    grid-template-columns: repeat(8, 1fr);    
+    grid-template-areas: 
+    '. . form form form form . .'
+   }
+   /*People Page*/
+   .people-added-container, .gifts-added-container {
+    width: 25.5rem !important;
+   }
+}
+
+
+/* LAPTOPS */
+@media only screen and (min-width: 1100px) {
+
+    
+/* SIDENAV */
+.sidenav {
+    height: 100vh;
     width: 190px;
     position: fixed;
     z-index: 1;
@@ -763,30 +791,19 @@ details summary::-webkit-details-marker {
     background-color: var(--nav-background);
     overflow-x: hidden;
     padding-top: 20px;
-    display: none;
-    box-shadow: 3px 5px 10px rgba(79, 79, 79, 0.17)
+    box-shadow: 3px 5px 10px rgba(79, 79, 79, 0.17);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
   }
   
-.sidenav a {
+.logo-nav {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font: var(--p-font);
     color: var(--color-black-light);
-    display: block;
   }
-
-
-.nav-icon {
-    vertical-align: middle;
-    padding: 0.5em;
-    height: 1em;
-  }
-
-.settings-icon {
-    vertical-align: middle;
-    padding: 0.3em;
-    width: 1.4em;
-}
 
 .logo-icon {
     vertical-align: middle;
@@ -810,23 +827,6 @@ details summary::-webkit-details-marker {
     color: var(--color-primary) !important;
     }
 
-/* TABLETS */
-@media only screen and (min-width: 481px) {
-   /*Login and Signup page*/
-    .auth-container {
-    grid-template-columns: repeat(8, 1fr);    
-    grid-template-areas: 
-    '. . form form form form . .'
-   }
-   /*People Page*/
-   .giftlist-main ul li {
-    width: 20rem;
-   }
-}
-
-
-/* LAPTOPS */
-@media only screen and (min-width: 769px) {
     /*Login and Signup page*/
     .auth-container {
         grid-template-columns: repeat(12, 1fr);
@@ -838,12 +838,205 @@ details summary::-webkit-details-marker {
    .bottomnav-mobile {
        display: none;
    }
-   .sidenav {
-       display: block;
-   }
+
 
    header, main {
        margin-left: 195px;
    }
-   
+
+   .side-link {
+       background-repeat: no-repeat;
+       width: 100%;
+       margin: 0.4rem 0;
+       text-align: left;
+       padding-left: 2rem;
+       padding: 6px 8px 6px 3.5rem !important; 
+       text-decoration: none;
+       font: var(--p-font);
+       color: var(--color-black-light);
+       background-color: transparent;
+       border: none;
+       margin-left: 0.5rem;
+   }
+
+   .side-link__people {
+       margin-top: 2.5rem;
+        background-image: url(../assets/icons/people-icon.svg);
+        background-size: 15%;
+        background-position: 10% 50%;
+   }
+
+   .side-link__people--active {
+    background-image: url(../assets/icons/people-icon-focused.svg) !important;
+    color: var(--color-primary);
+}
+
+.side-link__wishes {
+    background-image: url(../assets/icons/wishlist-icon.svg);
+    background-size: 14%;
+    background-position: 10% 50%;
+}
+.side-link__wishes--active {
+    background-image: url(../assets/icons/wishlist-icon-focused.svg) !important;
+    color: var(--color-primary);
+}
+
+.side-link__settings {
+    background-image: url(../assets/icons/settings-icon.png);
+    background-size: 20%;
+    background-position: 7% 50%;
+}
+.side-link__settings--active {
+    background-image: url(../assets/icons/settings-icon-green-outline.svg) !important;
+    color: var(--color-primary);
+}
+
+.sidenav-settings-container {
+    width: 100%;
+}
+
+.logout {
+    width: 16rem;
+    height: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-red);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+    position: absolute;
+    bottom: 5rem;
+    color: var(--main-ui-bg);
+    left: calc(50% - 8rem);
+}
+.logout-nav {
+    display: flex !important;
+    width: 75%;
+    height: 2.4rem;
+    border-radius: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-red);
+    color: var(--main-ui-bg);
+    box-shadow: 3px 3px 6px var(--color-black-light);
+    margin: 0.5rem auto 3rem auto;
+}
+
+
+/* SETTINGS */
+
+.settings-container {
+    height: 100vh;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 0;
+    position: static;
+    background-color: transparent;
+    display: none;
+    top: 0;
+    z-index: 15;
+    transition: none;
+}
+
+.account-details div div {
+    justify-content: flex-start;
+}
+
+.change-info {
+    margin-left: 2rem !important;
+}
+
+.settings-overlay-heading {
+    display: none;
+}
+
+.settings-close {
+    display: none;
+}
+
+.settings-open {
+    display: none;
+}
+
+.settings-container-open {
+    display: block;
+    left: 0;
+    transition: none;
+}
+
+.settings-themes h2 {
+    margin: 3rem 0 0 0;
+}
+
+.settings-themes-table {
+    margin-top: -7rem;
+    max-width: 700px;
+}
+
+.settings-container-userinfo {
+    margin: 0;
+}
+.settings-themes-table::before {
+    left: 0;
+    top: 10rem;
+    max-width: 700px;
+    position: relative;
+}
+
+.settings-themes-col--rev {
+    max-width: 700px;
+    position: absolute;
+}  
+
+tr td:nth-child(2) {
+    position: relative;
+    left: -4rem;
+}
+/* Content */
+.top-add-btn {
+    display: block;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    background-image: url(../assets/icons/add-item-icon.svg);
+    background-size: cover;
+    border: none;
+    color: White;
+    justify-self: center;
+}
+
+
+.giftlist-header {
+    position: static;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.peoplelist-main {
+    margin-top: 0;
+}
+
+   .people-added-container, .gifts-added-container {
+    width: 700px !important;
+   }
+
+   .delete-person {
+       left: 42.5rem;
+       top: 0.5rem;
+   }
+
+   .add-gift__popup, .add-people__popup {
+    z-index: 11;
+    top: 5vh;
+    left: calc(50% - 350px);
+    position: fixed;
+    border-radius: 10px;
+    width: 700px;
+    background-color: var(--nav-background);
+}
+
+
  }
