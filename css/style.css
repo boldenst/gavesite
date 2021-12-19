@@ -227,6 +227,8 @@ p {
     color: var(--p-font-color);
 }
 
+
+
 /* BOTTOMNAV MOBILE */
 
 .bottomnav-mobile {
@@ -326,7 +328,7 @@ p {
 }
 
 .settings-open {
-    background-image: url(../assets/icons/settings-icon-green-outline.svg);
+    background-image: url(../assets/icons/settings-icon-green-fill.svg);
     background-size: 90%;
     background-color: var(--main-ui-bg);
 }
@@ -773,6 +775,26 @@ details summary::-webkit-details-marker {
    .people-added-container, .gifts-added-container {
     width: 25.5rem !important;
    }
+
+   .delete-person {
+    left: 24rem;
+    top: 0.5rem;
+}
+
+.settings-themes-table {
+    margin-top: -7rem;
+}
+
+.settings-themes-table::before {
+    left: 0.5rem;
+    top: 10rem;
+    position: relative;
+}
+
+tr td:nth-child(2) {
+    position: relative;
+    left: -3rem;
+}
 }
 
 
@@ -887,7 +909,7 @@ details summary::-webkit-details-marker {
     background-position: 7% 50%;
 }
 .side-link__settings--active {
-    background-image: url(../assets/icons/settings-icon-green-outline.svg) !important;
+    background-image: url(../assets/icons/settings-icon-green-fill.svg) !important;
     color: var(--color-primary);
 }
 
@@ -941,7 +963,11 @@ details summary::-webkit-details-marker {
 }
 
 .account-details div div {
-    justify-content: flex-start;
+    justify-content: flex-between;
+}
+
+.settings-change-password {
+    margin-top: 3rem;
 }
 
 .change-info {
@@ -976,6 +1002,11 @@ details summary::-webkit-details-marker {
 }
 
 .settings-container-userinfo {
+    margin: 0;
+}
+
+.account-details {
+    width: auto;
     margin: 0;
 }
 .settings-themes-table::before {
@@ -1037,6 +1068,14 @@ tr td:nth-child(2) {
     border-radius: 10px;
     width: 700px;
     background-color: var(--nav-background);
+}
+
+/* Log in / sign up*/
+
+.auth-form h2 {
+    position: static;
+    text-align: left;
+    width: 100%;
 }
 
 
