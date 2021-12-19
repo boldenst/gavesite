@@ -1,4 +1,3 @@
-
 // Listen for auth status changes
 auth.onAuthStateChanged(user => {
     // console.log(user);

@@ -6,7 +6,7 @@
     --main-ui-bg: #F7F7F7;
     --color-black: #1A1A1A;
     --color-black-light: #ACACAC;
-    
+
     --h1-font: 700 40px graphie;
     --h1-font-color: var(--color-black);
 
@@ -24,7 +24,7 @@
 @font-face {
     font-family: graphie;
     src: url(https://use.typekit.net/ral6jgm.css);
-} 
+}
 
 * {
     padding: 0;
@@ -42,12 +42,12 @@
 .content-hide {
     display: none !important;
 }
+
 .content-show {
     display: block !important;
 }
 
 /* General styling */
-
 
 body {
     width: 100vw;
@@ -85,10 +85,10 @@ p {
     margin: 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    '. logo logo .'
-    'heading heading heading heading'
-    'sub sub sub sub'
+    grid-template-areas:
+        '. logo logo .'
+        'heading heading heading heading'
+        'sub sub sub sub'
     ;
 }
 
@@ -156,8 +156,8 @@ p {
     margin: 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    'form form form form'
+    grid-template-areas:
+        'form form form form'
     ;
 }
 
@@ -227,8 +227,6 @@ p {
     color: var(--p-font-color);
 }
 
-
-
 /* BOTTOMNAV MOBILE */
 
 .bottomnav-mobile {
@@ -295,14 +293,12 @@ p {
     color: var(--color-primary);
 }
 
-
-
 .bottom-link_current {
     border-top: 3px solid var(--color-primary);
     color: var(--color-primary);
 }
 
-.bottom-link_current > #Path_779 {
+.bottom-link_current>#Path_779 {
     border-top: 3px solid var(--color-primary);
     color: var(--color-primary);
 }
@@ -313,7 +309,8 @@ p {
 
 /* Settings */
 
-.settings-open, .settings-close {
+.settings-open,
+.settings-close {
     width: 3.5rem;
     height: 3.5rem;
     border: none;
@@ -366,11 +363,11 @@ p {
     margin: 2rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    'heading heading heading heading'
-    'acc-detail acc-detail acc-detail acc-detail'
-    'c-pass c-pass c-pass c-pass'
-    'theme theme theme theme'
+    grid-template-areas:
+        'heading heading heading heading'
+        'acc-detail acc-detail acc-detail acc-detail'
+        'c-pass c-pass c-pass c-pass'
+        'theme theme theme theme'
     ;
 }
 
@@ -382,7 +379,8 @@ p {
     margin-bottom: 1rem;
 }
 
-.account-details div { /* Give class in app.js */
+.account-details div {
+    /* Give class in app.js */
     font: var(--p-font);
     color: var(--p-font-color);
     margin: 1rem 0;
@@ -487,7 +485,8 @@ p {
 }
 
 /* POP UP ADD PERSON */
-.add-gift__popup, .add-people__popup {
+.add-gift__popup,
+.add-people__popup {
     display: none;
     z-index: 11;
     top: 5vh;
@@ -509,7 +508,9 @@ p {
     z-index: 10;
 }
 
-.pop-up__show--gifts, .pop-up__show--people, .pop-up__show {
+.pop-up__show--gifts,
+.pop-up__show--people,
+.pop-up__show {
     display: block;
 }
 
@@ -535,16 +536,18 @@ p {
     background-color: var(--main-ui-bg);
 }
 
-.giftlist-main, .peoplelist-main {
+.giftlist-main,
+.peoplelist-main {
     display: grid;
     margin: 5rem 2rem 0 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    'list list list list';
+    grid-template-areas:
+        'list list list list';
 }
 
-.giftlist-main ul, .peoplelist-main ul {
+.giftlist-main ul,
+.peoplelist-main ul {
     grid-area: list;
     padding-bottom: 8rem;
     width: 100%;
@@ -555,7 +558,8 @@ p {
     overflow-y: scroll;
 }
 
-.giftlist-main ul li, .peoplelist-main ul li {
+.giftlist-main ul li,
+.peoplelist-main ul li {
     margin: 1rem 0;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 10%);
     background-color: var(--main-ui-bg);
@@ -564,7 +568,8 @@ p {
     border-radius: 10px;
 }
 
-#people-form, #gift-form {
+#people-form,
+#gift-form {
     margin: 0rem 2rem 0 2rem;
     display: flex;
     flex-direction: column;
@@ -606,11 +611,13 @@ p {
     color: var(--p-font-color);
 }
 
-.input-field input:focus, .input-field textarea:focus {
+.input-field input:focus,
+.input-field textarea:focus {
     outline: none;
 }
 
-#people-form button, #gift-form button {
+#people-form button,
+#gift-form button {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -667,7 +674,7 @@ p {
     display: flex;
     align-items: center;
     margin-top: -2rem;
-    
+
 }
 
 .people-added-content-container h2 {
@@ -732,7 +739,7 @@ details p:before {
     transform: rotate(135deg);
     position: relative;
     left: calc(50% - 1rem);
-    top: 1.25rem ;
+    top: 1.25rem;
 }
 
 .people-added-add-info {
@@ -755,328 +762,339 @@ details p:before {
 }
 
 details summary::-webkit-details-marker {
-    display:none;
-  }
+    display: none;
+}
 
 /* SIDENAV */
 .sidenav {
     display: none;
-  }
-  
+}
+
 /* TABLETS */
 @media only screen and (min-width: 481px) {
-   /*Login and Signup page*/
+
+    /*Login and Signup page*/
     .auth-container {
-    grid-template-columns: repeat(8, 1fr);    
-    grid-template-areas: 
-    '. . form form form form . .'
-   }
-   /*People Page*/
-   .people-added-container, .gifts-added-container {
-    width: 25.5rem !important;
-   }
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+            '. . form form form form . .'
+    }
 
-   .delete-person {
-    left: 24rem;
-    top: 0.5rem;
-}
+    /*People Page*/
+    .people-added-container,
+    .gifts-added-container {
+        width: 25.5rem !important;
+    }
 
-.settings-themes-table {
-    margin-top: -7rem;
-}
+    .delete-person {
+        left: 24rem;
+        top: 0.5rem;
+    }
 
-.settings-themes-table::before {
-    left: 0.5rem;
-    top: 10rem;
-    position: relative;
-}
+    .settings-themes-table {
+        margin-top: -7rem;
+    }
 
-tr td:nth-child(2) {
-    position: relative;
-    left: -3rem;
-}
+    .settings-themes-table::before {
+        left: 0.5rem;
+        top: 10rem;
+        position: relative;
+    }
+
+    tr td:nth-child(2) {
+        position: relative;
+        left: -3rem;
+    }
 }
 
 
 /* LAPTOPS */
 @media only screen and (min-width: 1100px) {
 
-    
-/* SIDENAV */
-.sidenav {
-    height: 100vh;
-    width: 190px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--nav-background);
-    overflow-x: hidden;
-    padding-top: 20px;
-    box-shadow: 3px 5px 10px rgba(79, 79, 79, 0.17);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  
-.logo-nav {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font: var(--p-font);
-    color: var(--color-black-light);
-  }
 
-.logo-icon {
-    vertical-align: middle;
-    padding: 0.3em;
-    width: 1.7em;
-}
+    /* SIDENAV */
+    .sidenav {
+        height: 100vh;
+        width: 190px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--nav-background);
+        overflow-x: hidden;
+        padding-top: 20px;
+        box-shadow: 3px 5px 10px rgba(79, 79, 79, 0.17);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 
+    .logo-nav {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font: var(--p-font);
+        color: var(--color-black-light);
+    }
 
-.logo-nav {
-    font-weight: 600 !important;
-    color: var(--color-black) !important;
-    padding-bottom: 0.7em !important;
-}
-
-.logo-nav:hover {
-    cursor: default;
-}
+    .logo-icon {
+        vertical-align: middle;
+        padding: 0.3em;
+        width: 1.7em;
+    }
 
 
-.active-link {
-    color: var(--color-primary) !important;
+    .logo-nav {
+        font-weight: 600 !important;
+        color: var(--color-black) !important;
+        padding-bottom: 0.7em !important;
+    }
+
+    .logo-nav:hover {
+        cursor: default;
+    }
+
+
+    .active-link {
+        color: var(--color-primary) !important;
     }
 
     /*Login and Signup page*/
     .auth-container {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-areas: 
-        '. . . . form form form form . . . .'
+        grid-template-areas:
+            '. . . . form form form form . . . .'
     }
 
-   /*Navigation*/
-   .bottomnav-mobile {
-       display: none;
-   }
+    /*Navigation*/
+    .bottomnav-mobile {
+        display: none;
+    }
 
 
-   header, main {
-       margin-left: 195px;
-   }
+    header,
+    main {
+        margin-left: 195px;
+    }
 
-   .side-link {
-       background-repeat: no-repeat;
-       width: 100%;
-       margin: 0.4rem 0;
-       text-align: left;
-       padding-left: 2rem;
-       padding: 6px 8px 6px 3.5rem !important; 
-       text-decoration: none;
-       font: var(--p-font);
-       color: var(--color-black-light);
-       background-color: transparent;
-       border: none;
-       margin-left: 0.5rem;
-   }
+    .side-link {
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 0.4rem 0;
+        text-align: left;
+        padding-left: 2rem;
+        padding: 6px 8px 6px 3.5rem !important;
+        text-decoration: none;
+        font: var(--p-font);
+        color: var(--color-black-light);
+        background-color: transparent;
+        border: none;
+        margin-left: 0.5rem;
+    }
 
-   .side-link__people {
-       margin-top: 2.5rem;
+    .side-link__people {
+        margin-top: 2.5rem;
         background-image: url(../assets/icons/people-icon.svg);
         background-size: 15%;
         background-position: 10% 50%;
-   }
+    }
 
-   .side-link__people--active {
-    background-image: url(../assets/icons/people-icon-focused.svg) !important;
-    color: var(--color-primary);
+    .side-link__people--active {
+        background-image: url(../assets/icons/people-icon-focused.svg) !important;
+        color: var(--color-primary);
+    }
+
+    .side-link__wishes {
+        background-image: url(../assets/icons/wishlist-icon.svg);
+        background-size: 14%;
+        background-position: 10% 50%;
+    }
+
+    .side-link__wishes--active {
+        background-image: url(../assets/icons/wishlist-icon-focused.svg) !important;
+        color: var(--color-primary);
+    }
+
+    .side-link__settings {
+        background-image: url(../assets/icons/settings-icon.png);
+        background-size: 20%;
+        background-position: 7% 50%;
+    }
+
+    .side-link__settings--active {
+        background-image: url(../assets/icons/settings-icon-green-fill.svg) !important;
+        color: var(--color-primary);
+    }
+
+    .sidenav-settings-container {
+        width: 100%;
+    }
+
+    .logout {
+        width: 16rem;
+        height: 3rem;
+        border-radius: 2rem;
+        text-align: center;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-red);
+        box-shadow: 3px 3px 6px var(--color-black-light);
+        position: absolute;
+        bottom: 5rem;
+        color: var(--main-ui-bg);
+        left: calc(50% - 8rem);
+    }
+
+    .logout-nav {
+        display: flex !important;
+        width: 75%;
+        height: 2.4rem;
+        border-radius: 2rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-red);
+        color: var(--main-ui-bg);
+        box-shadow: 3px 3px 6px var(--color-black-light);
+        margin: 0.5rem auto 3rem auto;
+    }
+
+
+    /* SETTINGS */
+
+    .settings-container {
+        height: 100vh;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 0;
+        position: static;
+        background-color: transparent;
+        display: none;
+        top: 0;
+        z-index: 15;
+        transition: none;
+    }
+
+    .account-details div div {
+        justify-content: flex-between;
+    }
+
+    .settings-change-password {
+        margin-top: 3rem;
+    }
+
+    .change-info {
+        margin-left: 2rem !important;
+    }
+
+    .settings-overlay-heading {
+        display: none;
+    }
+
+    .settings-close {
+        display: none;
+    }
+
+    .settings-open {
+        display: none;
+    }
+
+    .settings-container-open {
+        display: block;
+        left: 0;
+        transition: none;
+    }
+
+    .settings-themes h2 {
+        margin: 3rem 0 0 0;
+    }
+
+    .settings-themes-table {
+        margin-top: -7rem;
+        max-width: 700px;
+    }
+
+    .settings-container-userinfo {
+        margin: 0;
+    }
+
+    .account-details {
+        width: auto;
+        margin: 0;
+    }
+
+    .settings-themes-table::before {
+        left: 0;
+        top: 10rem;
+        max-width: 700px;
+        position: relative;
+    }
+
+    .settings-themes-col--rev {
+        max-width: 700px;
+        position: absolute;
+    }
+
+    tr td:nth-child(2) {
+        position: relative;
+        left: -4rem;
+    }
+
+    /* Content */
+    .top-add-btn {
+        display: block;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
+        background-image: url(../assets/icons/add-item-icon.svg);
+        background-size: cover;
+        border: none;
+        color: White;
+        justify-self: center;
+    }
+
+
+    .giftlist-header {
+        position: static;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .peoplelist-main {
+        margin-top: 0;
+    }
+
+    .people-added-container,
+    .gifts-added-container {
+        width: 700px !important;
+    }
+
+    .delete-person {
+        left: 42.5rem;
+        top: 0.5rem;
+    }
+
+    .add-gift__popup,
+    .add-people__popup {
+        z-index: 11;
+        top: 5vh;
+        left: calc(50% - 350px);
+        position: fixed;
+        border-radius: 10px;
+        width: 700px;
+        background-color: var(--nav-background);
+    }
+
+    /* Log in / sign up*/
+
+    .auth-form h2 {
+        position: static;
+        text-align: left;
+        width: 100%;
+    }
+
+
 }
-
-.side-link__wishes {
-    background-image: url(../assets/icons/wishlist-icon.svg);
-    background-size: 14%;
-    background-position: 10% 50%;
-}
-.side-link__wishes--active {
-    background-image: url(../assets/icons/wishlist-icon-focused.svg) !important;
-    color: var(--color-primary);
-}
-
-.side-link__settings {
-    background-image: url(../assets/icons/settings-icon.png);
-    background-size: 20%;
-    background-position: 7% 50%;
-}
-.side-link__settings--active {
-    background-image: url(../assets/icons/settings-icon-green-fill.svg) !important;
-    color: var(--color-primary);
-}
-
-.sidenav-settings-container {
-    width: 100%;
-}
-
-.logout {
-    width: 16rem;
-    height: 3rem;
-    border-radius: 2rem;
-    text-align: center;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-red);
-    box-shadow: 3px 3px 6px var(--color-black-light);
-    position: absolute;
-    bottom: 5rem;
-    color: var(--main-ui-bg);
-    left: calc(50% - 8rem);
-}
-.logout-nav {
-    display: flex !important;
-    width: 75%;
-    height: 2.4rem;
-    border-radius: 2rem;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-red);
-    color: var(--main-ui-bg);
-    box-shadow: 3px 3px 6px var(--color-black-light);
-    margin: 0.5rem auto 3rem auto;
-}
-
-
-/* SETTINGS */
-
-.settings-container {
-    height: 100vh;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 0;
-    position: static;
-    background-color: transparent;
-    display: none;
-    top: 0;
-    z-index: 15;
-    transition: none;
-}
-
-.account-details div div {
-    justify-content: flex-between;
-}
-
-.settings-change-password {
-    margin-top: 3rem;
-}
-
-.change-info {
-    margin-left: 2rem !important;
-}
-
-.settings-overlay-heading {
-    display: none;
-}
-
-.settings-close {
-    display: none;
-}
-
-.settings-open {
-    display: none;
-}
-
-.settings-container-open {
-    display: block;
-    left: 0;
-    transition: none;
-}
-
-.settings-themes h2 {
-    margin: 3rem 0 0 0;
-}
-
-.settings-themes-table {
-    margin-top: -7rem;
-    max-width: 700px;
-}
-
-.settings-container-userinfo {
-    margin: 0;
-}
-
-.account-details {
-    width: auto;
-    margin: 0;
-}
-.settings-themes-table::before {
-    left: 0;
-    top: 10rem;
-    max-width: 700px;
-    position: relative;
-}
-
-.settings-themes-col--rev {
-    max-width: 700px;
-    position: absolute;
-}  
-
-tr td:nth-child(2) {
-    position: relative;
-    left: -4rem;
-}
-/* Content */
-.top-add-btn {
-    display: block;
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    font-size: 3rem;
-    background-image: url(../assets/icons/add-item-icon.svg);
-    background-size: cover;
-    border: none;
-    color: White;
-    justify-self: center;
-}
-
-
-.giftlist-header {
-    position: static;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.peoplelist-main {
-    margin-top: 0;
-}
-
-   .people-added-container, .gifts-added-container {
-    width: 700px !important;
-   }
-
-   .delete-person {
-       left: 42.5rem;
-       top: 0.5rem;
-   }
-
-   .add-gift__popup, .add-people__popup {
-    z-index: 11;
-    top: 5vh;
-    left: calc(50% - 350px);
-    position: fixed;
-    border-radius: 10px;
-    width: 700px;
-    background-color: var(--nav-background);
-}
-
-/* Log in / sign up*/
-
-.auth-form h2 {
-    position: static;
-    text-align: left;
-    width: 100%;
-}
-
-
- }

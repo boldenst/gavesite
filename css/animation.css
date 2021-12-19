@@ -1,3 +1,5 @@
+/* Animating logo on index page */
+
 #logo-green-circle {
     opacity: 0;
     animation-name: circle;
@@ -35,6 +37,8 @@
     animation-name: check-slide;
     animation: check-slide .5s 3s forwards;
 }
+
+/* Keyframes for animated logo */
 
 @keyframes circle {
     0% {
@@ -99,6 +103,8 @@
     }
 }
 
+/* Animated pop-up on dashboard when adding on new wishes or people */
+
 .add-gift__popup, .add-people__popup {
     animation-name: popup;
     animation: popup .5s forwards;
@@ -115,6 +121,8 @@
     }
 }
 
+/* Animated slide-out when changing tab from people to wishlist */
+
 .people-out {
     animation-name: people-out;
     animation: people-out .5s ease;
@@ -128,6 +136,8 @@
         transform: translateX(-100vw);
     }
 }
+
+/* Animated slide-out when changing tab from wishlist to people */
 
 .gifts-out {
     animation-name: gifts-out;

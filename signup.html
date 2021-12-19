@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ral6jgm.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
     <!-- Sign up -->
@@ -16,9 +18,9 @@
         <div class="auth-container signup-container">
             <form id="signup-form" class="auth-form">
                 <h2>Opret bruger</h2>
-                <input id="signup-username" type="username" placeholder="Brugernavn" required/>
-                <input id="signup-email" type="email" placeholder="Email" required/>
-                <input id="signup-password" type="password" placeholder="Kodeord" required/>
+                <input id="signup-username" type="username" placeholder="Brugernavn" required />
+                <input id="signup-email" type="email" placeholder="Email" required />
+                <input id="signup-password" type="password" placeholder="Kodeord" required />
                 <button class="auth-signup-btn">Opret bruger</button>
                 <p>Har du en bruger<a href="./login.html"> Log ind her!</a></p>
 
@@ -26,13 +28,13 @@
         </div>
     </div>
 
-    <!-- Log in -->
+    <!-- Log in that needs to be here for the sign up feature to work-->
     <div class="auth-container login-container">
         <form id="login-form" class="auth-form">
         </form>
     </div>
 
-    
+    <!-- Relavant scripts -->
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
@@ -41,4 +43,5 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

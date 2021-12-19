@@ -1,12 +1,12 @@
 let people = db.collection('people');
 const peopleList = document.querySelector('.people')
 let cross = document.querySelector('.delete-person')
-
+//Authstatechange checks if the user is signed in which allows the functions in the "if" statement
 auth.onAuthStateChanged(user => {
     if (user) {
         window.location.href = "#";
 
-        //Create new gift
+        //Create new person feature, for grabbing the information from the form and inputting to collection
         const peopleForm = document.querySelector('#people-form');
         peopleForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -16,14 +16,14 @@ auth.onAuthStateChanged(user => {
             }).then(() => {
                 //Reset form
                 peopleForm.reset();
-                // location.reload();
+                //close the pop up after submit
                 $('.pop-up__show--people').removeClass('pop-up__show--people');
                 $('.pop-up__show').removeClass('pop-up__show');
             }).catch(err => {
                 console.log(err.message)
             });
         });
-
+        // Template for the displayed people
         const peopleInput = (data) => {
             let html = '';
             data.forEach(doc => {
@@ -50,22 +50,22 @@ auth.onAuthStateChanged(user => {
             peopleList.innerHTML = html;
         };
 
-        //Get data for "Gaver til andre"
+        // This is where we get the data from the collection to be displayed in the template
 
         people.where('customid', '==', user.uid).orderBy('title').onSnapshot(snapshot => {
             peopleInput(snapshot.docs);
         });
-        
+
     } else {
         window.location.href = "./index.html";
     }
 });
 
-//Deleting data
+// for deleting the different added people
 peopleList.addEventListener('click', (e) => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute('data-id');
     db.collection('people').doc(id).delete().then(() => {
-        // location.reload();
+
     });
 });
