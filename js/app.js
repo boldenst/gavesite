@@ -1,13 +1,13 @@
 let presents = db.collection('gifts');
 const presentList = document.querySelector('.gifts');
-
+//Authstatechange checks if the user is signed in which allows the functions in the "if" statement
 auth.onAuthStateChanged(user => {
     if (user) {
         window.location.href = "#";
-        // account info
+        // account info displayed in settings
         const accountDetails = document.querySelector('.account-details');
         db.collection('users').doc(user.uid).get().then(doc => {
-        const html = `
+            const html = `
         <div>
             <p>Navn:</p>
             <div>
@@ -21,9 +21,9 @@ auth.onAuthStateChanged(user => {
                 <div class="change-info change-email"></div>
             </div>    
         `;
-        accountDetails.innerHTML = html;
-    });
-        //Create new gift
+            accountDetails.innerHTML = html;
+        });
+        //Create new person feature, for grabbing the information from the form and inputting to collection
         const presentForm = document.querySelector('#gift-form');
         presentForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -35,7 +35,7 @@ auth.onAuthStateChanged(user => {
             }).then(() => {
                 //Reset form
                 presentForm.reset();
-                // location.reload();
+                //close the pop up after submit
                 $('.pop-up__show--gifts').removeClass('pop-up__show--gifts');
                 $('.pop-up__show').removeClass('pop-up__show');
                 $('.gifts-added-container').removeClass('content-hide');
@@ -43,7 +43,7 @@ auth.onAuthStateChanged(user => {
                 console.log(err.message)
             });
         });
-
+        // Template for the displayed gifts
         const presentInput = (data) => {
             let html = '';
             data.forEach(doc => {
@@ -74,19 +74,19 @@ auth.onAuthStateChanged(user => {
             presentList.innerHTML = html;
         }
 
-        //Get data for "Min ønskeliste"
-        
+        // This is where we get the data from the collection to be displayed in the template
+
         presents.where('customid', '==', user.uid).orderBy('title').onSnapshot(snapshot => {
             presentInput(snapshot.docs);
         });
 
         // settingsUI(user);
-        } else {
+    } else {
         window.location.href = "./index.html";
     }
 });
 
-//Deleting data
+// for deleting the different added gifts
 presentList.addEventListener('click', (e) => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute('data-id');

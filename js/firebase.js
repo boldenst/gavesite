@@ -11,7 +11,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-// make auth and firestore references
+// make auth and firestore references 
 const auth = firebase.auth();
 const db = firebase.firestore();
 

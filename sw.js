@@ -1,5 +1,6 @@
 const staticCacheName = 'site-static-v1';
 const assets = [
+  // Content and ressources to cache
   // Pages
   '/',
   '/index.html',
